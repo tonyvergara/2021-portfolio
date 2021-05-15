@@ -300,9 +300,12 @@ footer .list-inline {
 }
 footer .copyright {
   font-size: 14px;
-  text-align: center;
   margin-bottom: 0;
 }
+footer li {
+	list-style-type: none;
+}
+
 .floating-label-form-group {
   font-size: 14px;
   position: relative;
@@ -427,3 +430,5 @@ body {
 	padding:20px;
 	font-size:16px;
 }
+
+
