@@ -103,7 +103,9 @@
     </div>
     {% endif %}
   </div>
+  {% if project.deliverables %}
   <div class="container">
+    <h2>Project Snapshots</h2>
     <div class="row">
     {% for deliverable in project.deliverables %}
         <div class='post-preview'>
@@ -113,6 +115,7 @@
       {% endfor %}
     </div>
   </div>
+  {% endif %}
 </article>
 
 {% endblock %}
