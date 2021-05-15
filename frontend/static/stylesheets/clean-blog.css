@@ -146,6 +146,7 @@ hr.small {
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 50px;
+  position:relative;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
