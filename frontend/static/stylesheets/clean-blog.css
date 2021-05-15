@@ -53,6 +53,9 @@ hr.small {
   z-index: 3;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+.navbar-custom ul {
+	display:inline-block;
+}
 .navbar-custom .navbar-brand {
   font-weight: 800;
 }
@@ -67,6 +70,9 @@ hr.small {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+}
+.navbar .container-fluid {
+	flex-wrap: wrap;
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
@@ -88,6 +94,9 @@ hr.small {
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
     color: rgba(255, 255, 255, 0.8);
+  }
+  .navbar .container-fluid {
+	flex-wrap: nowrap;
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -229,6 +238,7 @@ hr.small {
     left: 0px;
     background-color: rgba(0,0,0,0.5);
 }
+
 
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
