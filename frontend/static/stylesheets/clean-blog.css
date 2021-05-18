@@ -539,4 +539,14 @@ body {
   color: white;
 }
 
-
+.deliverables .card {
+	cursor:pointer;
+}
+.deliverables {
+	background-color: #d3d3d3;
+	padding:50px 0;
+}
+.deliverables .row {
+	justify-content: space-between;
+	padding:20px 0;
+}

@@ -38,7 +38,7 @@
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>
         <h3>{{ project.section1_title }}</h3>
-        <p>{{ project.s1_body }}</p>
+        <p>{{ project.s1_body|markdownify|safe  }}</p>
       </div>
       <div class="col-lg-6"><img style="width:100%;" src="{{ project.section1_image.url }}"></div>
     </div>
@@ -46,7 +46,7 @@
     <div class='row'>
       <div class='col-lg-6'>
         <h3>{{ project.section1_title }}</h3>
-        <p>{{ project.s1_body }}</p>
+        <p>{{ project.s1_body|markdownify|safe  }}</p>
       </div>
       <div class="col-lg-6"><img style="width:100%;"  src="{{ project.section1_image.url }}"></div>
     </div>
@@ -56,14 +56,14 @@
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>
         <h3>{{ project.section2_title }}</h3>
-        <p>{{ project.s2_body }}</p>
+        <p>{{ project.s2_body|markdownify|safe  }}</p>
       </div>
     </div>
     {% else %}
     <div class='row'>
       <div class='col-lg-6'>
         <h3>{{ project.section2_title }}</h3>
-        <p>{{ project.s2_body }}</p>
+        <p>{{ project.s2_body|markdownify|safe  }}</p>
       </div>
       <div class="col-lg-6"><img style="width:100%;"  src="{{ project.section2_image.url }}"></div>
     </div>
@@ -73,14 +73,14 @@
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>
         <h3>{{ project.section3_title }}</h3>
-        <p>{{ project.s3_body }}</p>
+        <p>{{ project.s3_body|markdownify|safe  }}</p>
       </div>
     </div>
     {% else %}
     <div class='row'>
       <div class='col-lg-6'>
         <h3>{{ project.section3_title }}</h3>
-        <p>{{ project.s3_body }}</p>
+        <p>{{ project.s3_body|markdownify|safe  }}</p>
       </div>
       <div class="col-lg-6"><img style="width:100%;"  src="{{ project.section3_image.url }}"></div>
     </div>
@@ -90,29 +90,43 @@
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>
         <h3>{{ project.section4_title }}</h3>
-        <p>{{ project.s4_body }}</p>
+        <p>{{ project.s4_body|markdownify|safe }}</p>
       </div>
     </div>
     {% else %}
     <div class='row'>
       <div class='col-lg-6'>
         <h3>{{ project.section4_title }}</h3>
-        <p>{{ project.s4_body }}</p>
+        <p>{{ project.s4_body|markdownify|safe }}</p>
       </div>
       <div class="col-lg-6"><img style="width:100%;" src="{{ project.section4_image.url }}"></div>
     </div>
     {% endif %}
   </div>
   {% if project.deliverables %}
-  <div class="deliverables container">
-    <h2>Project Artefacts</h2>
-    <div class="row">
-      {% for deliverable in project.deliverables %}
-      <div class="col-lg-4">
-        <img style="width:100%" src="{{deliverable.url}}" onclick="openModal();currentSlide({{ forloop.counter }})" class="hover-shadow">
-        <span>{{ deliverable.title }}</span>
+  <div class="deliverables">
+    <div class="container">
+      <h2 class="text-center">Project Artefacts</h2>
+      <div class="row">
+        {% for deliverable in project.deliverables %}
+        {% if deliverable.file.contentType == 'application/pdf' %}
+        <div class="col-lg-4 card" onclick="openModal();currentSlide({{ forloop.counter }})" class="hover-shadow">
+          <div class="card-body">
+            
+            <h3><i class="fas fa-file-pdf"></i> {{deliverable.title}}</h3>
+            <span>{{deliverable.description}}</span>
+          </div>
+        </div>
+        {% endif %}
+        {% if deliverable.file.contentType == 'image/jpeg' %}
+        <div class="col-lg-4 card">
+          <img style="width:100%" src="{{deliverable.url}}" onclick="openModal();currentSlide({{ forloop.counter }})" class="hover-shadow">
+          <span>{{ deliverable.title }}</span>
+        </div>
+        {% endif %}
+        
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
   <!-- The Modal/Lightbox -->
@@ -138,10 +152,10 @@
       <!-- Thumbnail image controls -->
       <div class="row">
         {% for deliverable in project.deliverables %}
-      <div class="col-lg-4">
-        <img class="demo" style="width:100%" src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" onclick="currentSlide({{ forloop.counter }})" alt="{{deliverable.title}}">
-      </div>
-      {% endfor %}
+        <div class="col-lg-4">
+          <img class="demo" style="width:100%" src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" onclick="currentSlide({{ forloop.counter }})" alt="{{deliverable.title}}">
+        </div>
+        {% endfor %}
     </div>
     </div>
   </div>
