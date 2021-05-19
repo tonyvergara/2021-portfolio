@@ -12,6 +12,8 @@ def home(request):
             {'content_type': 'project', 'include': 3}
         ),'testimonials': client.entries(
             {'content_type': 'testimonial', 'include': 3, 'limit': 3}
+        ),'categories': client.entries(
+            {'content_type': 'category', 'include': 3}
         )
 
     })
@@ -48,3 +50,10 @@ def project_by_slug(request, slug):
         return render(request, 'projects/project.html', {'project': project})
     except IndexError:
         raise Http404('Project not found for slug: {0}'.format(slug))
+
+def skills(request):
+    return render(request, 'skills.html', {
+        'skills': client.entries(
+            {'content_type': 'skill', 'include': 3}
+        )
+    })
