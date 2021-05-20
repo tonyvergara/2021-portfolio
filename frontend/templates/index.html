@@ -15,7 +15,7 @@
   </div>
 </header>
 <div class='container'>
-  <h2>My Skills</h2>
+  <h2 class="section-header">My Skills</h2>
   <div class='row'>
     {% for category in categories %}
     <div class='col-lg-6'>
@@ -32,10 +32,10 @@
   </div>
 </div>
 <div class='container'>
+  <h2 class="section-header">Recent Projects</h2>
   <div class='row'>
-    <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-      <h2>Recent Projects</h2>
-      {% for project in projects %}
+    {% for project in projects %}
+    <div class='col-lg-6'>
         <div class='post-preview'>
           <a href="/projects/{{ project.slug }}">
             <h3>{{ project.project_title }}</h3>
@@ -43,21 +43,16 @@
           {% if project.description %}
             <p class='post-subtitle'>{{ project.description }}</p>
           {% endif %}
-          <p class='post-meta'>Written by
-            <a href="#">{{ project.author.name }}</a>
-            on {{ project.publication_date|date:"d/M/Y" }}
-          </p>
         </div>
-        <hr />
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
 </div>
 <div class='container'>
+  <h2 class="section-header">Recent Blogs</h2>
   <div class='row'>
-    <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-      <h2>Recent Blogs</h2>
-      {% for post in blogs %}
+    {% for post in blogs %}
+    <div class='col-lg-6'>
         <div class='post-preview'>
           <a href="/blog/{{ post.slug }}">
             <h3>{{ post.title }}</h3>
@@ -70,15 +65,15 @@
             on {{ post.publication_date|date:"d/M/Y" }}
           </p>
         </div>
-        <hr />
-      {% endfor %}
+      
     </div>
+    {% endfor %}
   </div>
 </div>
 <div class='container'>
   <div class='row'>
     <div class='col-md-10 col-md-offset-1'>
-      <h2>Recent Testimonials</h2>
+      <h2 class="section-header">Recent Testimonials</h2>
       <div>{% for quote in testimonials %}
         <div class='post-preview col-md-4 card'>
           <div><span class="testimonial">"{{ quote.quote_text }}"</span></div>

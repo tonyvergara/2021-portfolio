@@ -7,11 +7,11 @@ from .models import client
 def home(request):
     return render(request, 'index.html', {
         'blogs': client.entries(
-            {'content_type': 'blogPost', 'include': 3}
+            {'content_type': 'blogPost', 'include': 3, 'limit': 4}
         ),'projects': client.entries(
-            {'content_type': 'project', 'include': 3}
+            {'content_type': 'project', 'include': 3, 'limit': 4}
         ),'testimonials': client.entries(
-            {'content_type': 'testimonial', 'include': 3, 'limit': 3}
+            {'content_type': 'testimonial', 'include': 3, 'limit': 4}
         ),'categories': client.entries(
             {'content_type': 'category', 'include': 3}
         )

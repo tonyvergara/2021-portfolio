@@ -286,11 +286,11 @@ hr.small {
     font-size: 36px;
   }
 }
-.section-heading {
+/*.section-heading {
   font-size: 36px;
   margin-top: 60px;
   font-weight: 700;
-}
+}*/
 .caption {
   text-align: center;
   font-size: 14px;
@@ -550,3 +550,10 @@ body {
 	justify-content: space-between;
 	padding:20px 0;
 }
+
+
+h2.section-header::after {
+	content: " ———";
+
+}
+
