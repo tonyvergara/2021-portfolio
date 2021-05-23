@@ -11,7 +11,7 @@ def home(request):
         ),'projects': client.entries(
             {'content_type': 'project', 'include': 3, 'limit': 4}
         ),'testimonials': client.entries(
-            {'content_type': 'testimonial', 'include': 3, 'limit': 4}
+            {'content_type': 'testimonial', 'include': 3, 'limit': 3}
         ),'categories': client.entries(
             {'content_type': 'category', 'include': 3}
         )
@@ -57,3 +57,20 @@ def skills(request):
             {'content_type': 'skill', 'include': 3}
         )
     })
+
+def categories(request):
+    return render(request, 'categories.html', {
+        'skills': client.entries(
+            {'content_type': 'category', 'include': 3}
+        )
+    })
+
+
+def category_by_slug(request, slug):
+    try:
+        tag = client.entries(
+            {'content_type': 'category', 'fields.slug': slug, 'include': 3}
+        )[0]
+        return render(request, 'category.html', {'tag': tag})
+    except IndexError:
+        raise Http404('Skill not found for slug: {0}'.format(slug))

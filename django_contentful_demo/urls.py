@@ -25,4 +25,7 @@ urlpatterns = [
     url(r'^projects$', views.projects),
     url(r'^projects/(?P<slug>[-\w]+)$', views.project_by_slug),
     url(r'^skills$', views.skills),
+    url(r'^categories$', views.categories),
+    url(r'^categories/(?P<slug>[-\w]+)$', views.category_by_slug),
+    
 ]

@@ -1,15 +1,17 @@
 {% extends "layout.html" %}
 {% load static %}
+{% load markdownify %}
+
 
 {% block content %}
-<header class='intro-header' style="background-image: url('{% static "images/home-bg.jpg" %}')">
+<header class='intro-header' style="background-image: url('{{tag.hero_image.url}}')">
   <div class='container'>
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
         <div class='site-heading'>
-          <h1>Projects</h1>
+          <h1>{{tag.title}}</h1>
           <hr class='small' />
-          <span class='subheading'>Tony Vergara</span>
+          <span class='subheading'>{{tag.description}}</span>
       </div>
     </div>
   </div>
@@ -17,13 +19,11 @@
 <div class='container'>
   <div class='row'>
     <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-      {% for project in projects %}
-        <div class='post-preview'>
-          <a  href="/projects/{{ project.slug }}">
-            <h2 class='post-title'>{{ project.project_title }}</h2>
-          </a>
-          {% if project.description %}
-            <p class='post-subtitle'>{{ project.description }}</p>
+      {% for skill in tag.skills %}
+        <div>
+          <h2 class='post-title'>{{ skill.title }}</h2>
+          {% if skill.description %}
+          <p>{{ skill.description|markdownify|safe }}</p>
           {% endif %}
         </div>
         <hr />
