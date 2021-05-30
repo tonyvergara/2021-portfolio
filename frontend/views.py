@@ -11,7 +11,7 @@ def home(request):
         ),'projects': client.entries(
             {'content_type': 'project', 'include': 3, 'limit': 4}
         ),'testimonials': client.entries(
-            {'content_type': 'testimonial', 'include': 3, 'limit': 3}
+            {'content_type': 'testimonial', 'include': 3, 'limit': 6}
         ),'categories': client.entries(
             {'content_type': 'category', 'include': 3}
         )

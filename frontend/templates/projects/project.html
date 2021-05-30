@@ -37,69 +37,68 @@
     {% if not project.section1_image %}
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>
-        <h3>{{ project.section1_title }}</h3>
+        <h2>{{ project.section1_title }}</h2>
         <p>{{ project.s1_body|markdownify|safe  }}</p>
       </div>
-      <div class="col-lg-6"><img style="width:100%;" src="{{ project.section1_image.url }}"></div>
     </div>
     {% else %}
     <div class='row'>
       <div class='col-lg-6'>
-        <h3>{{ project.section1_title }}</h3>
+        <h2>{{ project.section1_title }}</h2>
         <p>{{ project.s1_body|markdownify|safe  }}</p>
       </div>
-      <div class="col-lg-6"><img style="width:100%;"  src="{{ project.section1_image.url }}"></div>
+      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section1_image.url }}"><figcaption class="figure-caption">{{ project.section4_image.description }}</figcaption></figure>
     </div>
     {% endif %}
     <hr>
     {% if not project.section2_image %}
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>
-        <h3>{{ project.section2_title }}</h3>
+        <h2>{{ project.section2_title }}</h2>
         <p>{{ project.s2_body|markdownify|safe  }}</p>
       </div>
     </div>
     {% else %}
     <div class='row'>
       <div class='col-lg-6'>
-        <h3>{{ project.section2_title }}</h3>
+        <h2>{{ project.section2_title }}</h2>
         <p>{{ project.s2_body|markdownify|safe  }}</p>
       </div>
-      <div class="col-lg-6"><img style="width:100%;"  src="{{ project.section2_image.url }}"></div>
+      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section2_image.url }}"><figcaption class="figure-caption">{{ project.section4_image.description }}</figcaption></figure>
     </div>
     {% endif %}
     <hr>
     {% if not project.section3_image %}
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>
-        <h3>{{ project.section3_title }}</h3>
+        <h2>{{ project.section3_title }}</h2>
         <p>{{ project.s3_body|markdownify|safe  }}</p>
       </div>
     </div>
     {% else %}
     <div class='row'>
       <div class='col-lg-6'>
-        <h3>{{ project.section3_title }}</h3>
+        <h2>{{ project.section3_title }}</h2>
         <p>{{ project.s3_body|markdownify|safe  }}</p>
       </div>
-      <div class="col-lg-6"><img style="width:100%;"  src="{{ project.section3_image.url }}"></div>
+      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section3_image.url }}"><figcaption class="figure-caption">{{ project.section4_image.description }}</figcaption></figure>
     </div>
     {% endif %}
     <hr>
     {% if not project.section4_image %}
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>
-        <h3>{{ project.section4_title }}</h3>
+        <h2>{{ project.section4_title }}</h2>
         <p>{{ project.s4_body|markdownify|safe }}</p>
       </div>
     </div>
     {% else %}
     <div class='row'>
       <div class='col-lg-6'>
-        <h3>{{ project.section4_title }}</h3>
+        <h2>{{ project.section4_title }}</h2>
         <p>{{ project.s4_body|markdownify|safe }}</p>
       </div>
-      <div class="col-lg-6"><img style="width:100%;" src="{{ project.section4_image.url }}"></div>
+      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section4_image.url }}"><figcaption class="figure-caption">{{ project.section4_image.description }}</figcaption></figure>
     </div>
     {% endif %}
   </div>

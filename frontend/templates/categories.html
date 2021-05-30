@@ -16,28 +16,33 @@
     </div>
   </div>
 </header>
+{% for item in skills %}
 <div class='container'>
-  {% for item in skills %}
+  <a href="{{ item.slug }}"><h2 class='post-title'>{{ item.title }}</h2></a>
   <div class='row'>
-    <div class=''>
+    <div style='display:flex;align-items:center;'>
 
         <div class="col-md-6">
-          <a href="/categories/{{ item.slug }}"><h2 class='post-title'>{{ item.title }}</h2></a>
           <p>{{ item.description|markdownify|safe }}</p>
-          <img src="{{item.hero_image.url}}" style="width:100%">
         </div>
-          {% if item.skills %}
-          <div class="col-md-6">
-            <ul>
-            {% for skill in item.skills %}
-            <li>{{skill.title}}</li>
-            {% endfor %}
-            </ul>
-          </div>
+        {% if item.skills %}
+        <div class="col-md-6">
+          {% if item.skills|length >= 6 %}
+          <ul class="two-col-list">
+          {% else %}
+          <ul>
           {% endif %}
+          {% for skill in item.skills %}
+          <li>{{skill.title}}</li>
+          {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
       
     </div>
   </div>
-  {% endfor %}
+  <hr>
 </div>
+
+{% endfor %}
 {% endblock %}

@@ -10,6 +10,10 @@
           <h1>Tony Vergara</h1>
           <hr class='small' />
           <span class='subheading'>UX Strategist and Researcher looking to use my background in psychology and neuroscience research to deliver products that make a positive impact in the world.</span>
+          <div class='hero-cta'>
+            <a class="btn btn-primary" href="/projects" role="button">See My Work</a>
+            <a class="btn btn-link text-warning" href="#contact" role="button">Get In Touch</a>
+          </div>
       </div>
     </div>
   </div>
@@ -20,7 +24,8 @@
     {% for category in categories %}
     <div class='col-lg-6'>
         <div class='post-preview'>
-          <a href="#">
+          <img class='icon' src="{{category.icon.url}}">
+          <a href="{{category.slug}}">
             <h3>{{ category.title }}</h3>
           </a>
           {% if category.description %}
@@ -71,12 +76,12 @@
     {% endfor %}
   </div>
 </div>
-<div class='container'>
-  <h2 class="section-header">Recent Testimonials</h2>
+<div class=''>
+  <div class='container'><h2 class="section-header">Recent Testimonials</h2></div>
   <div class='row'>
-    <div class='col-md-12 testimonial'>
+    <div class='col-lg-12 testimonial'>
       {% for quote in testimonials %}
-        <div class='col-md-4 card' style="padding:20px">
+        <div class='col-lg-4 col-md-6 card' style="padding:20px;background-color:#f2f2f2;">
           <img style="position:absolute;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTMgMTQuNzI1YzAtNS4xNDEgMy44OTItMTAuNTE5IDEwLTExLjcyNWwuOTg0IDIuMTI2Yy0yLjIxNS44MzUtNC4xNjMgMy43NDItNC4zOCA1Ljc0NiAyLjQ5MS4zOTIgNC4zOTYgMi41NDcgNC4zOTYgNS4xNDkgMCAzLjE4Mi0yLjU4NCA0Ljk3OS01LjE5OSA0Ljk3OS0zLjAxNSAwLTUuODAxLTIuMzA1LTUuODAxLTYuMjc1em0tMTMgMGMwLTUuMTQxIDMuODkyLTEwLjUxOSAxMC0xMS43MjVsLjk4NCAyLjEyNmMtMi4yMTUuODM1LTQuMTYzIDMuNzQyLTQuMzggNS43NDYgMi40OTEuMzkyIDQuMzk2IDIuNTQ3IDQuMzk2IDUuMTQ5IDAgMy4xODItMi41ODQgNC45NzktNS4xOTkgNC45NzktMy4wMTUgMC01LjgwMS0yLjMwNS01LjgwMS02LjI3NXoiLz48L3N2Zz4=">
           <div><p>{{ quote.quote_text }}</p></div>
         </div>

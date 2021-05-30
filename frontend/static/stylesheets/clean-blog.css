@@ -1,8 +1,12 @@
-/*!
- * Start Bootstrap - Clean Blog v3.3.7+1 (http://startbootstrap.com/template-overviews/clean-blog)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+:root {
+  --brand1: #1e90ff;
+  --brand2: #ffffff;
+  --brand3: #f2f2f2;
+  --brand4: #e0e0e0;
+  --brand-dark: #131313;
+  --brand-light: #f2f2f2;
+}
+
 body {
   font-family: 'Yantramanav', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -202,7 +206,7 @@ hr.small {
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 80px;
+    font-size: 54px;
   }
 }
 .intro-header .post-heading h1 {
@@ -236,7 +240,8 @@ hr.small {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: rgba(0,0,0,0.5);
+    /*background-color: rgba(0,0,0,0.5);*/
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.35) 100%);
 }
 
 
@@ -314,6 +319,7 @@ footer .copyright {
 }
 footer li {
 	list-style-type: none;
+  padding: 5px 0;
 }
 .footer-link-text {
 	color:white;
@@ -387,6 +393,13 @@ form .row:first-child .floating-label-form-group {
   border: 1px solid #0085A1;
   color: white;
 }
+.btn-link::after {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: '\f30b'; padding-left: 5px;text-decoration: none;display:inline-block;
+}
+.btn-primary {
+  background-color: var(--brand1);
+}
+
 .pager {
   margin: 20px 0 0;
 }
@@ -418,12 +431,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #0085A1;
+  background: var(--brand1);
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #0085A1;
+  background: var(--brand1);
 }
 img::selection {
   color: white;
@@ -434,7 +447,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  -webkit-tap-highlight-color: #0085A1;
+  -webkit-tap-highlight-color: var(--brand1);
 }
 
 .testimonial span {
@@ -445,7 +458,13 @@ body {
 
 .testimonial {
 	display:flex;
-	display:inline;
+  width: 100%;
+  overflow-x: scroll;
+}
+.testimonial > * {
+  margin: 0 20px;
+  width: auto;
+  
 }
 
 
@@ -569,4 +588,14 @@ h2.section-header::after {
 h2.section-header::before {
 	content: "——— ";
 
+}
+.two-col-list {
+	column-count: 2;
+}
+.icon {
+  width: 75px;
+  stroke: #00a4f7;
+}
+.hero-cta {
+  margin: 20px auto;
 }
