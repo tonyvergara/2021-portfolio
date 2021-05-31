@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 #from django.contrib import admin
 from frontend import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
@@ -28,4 +31,4 @@ urlpatterns = [
     url(r'^categories$', views.categories),
     url(r'^(?P<slug>[-\w]+)$', views.category_by_slug),
     
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

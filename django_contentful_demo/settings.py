@@ -121,14 +121,12 @@ USE_TZ = True
 
 # STATIC_URL = '/frontend/static/'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'frontend', 'static')
-
-MEDIA_ROOT = os.path.join(BASE_DIR,'frontend', 'media')
-MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
-    MEDIA_ROOT,
+    os.path.join(BASE_DIR, 'frontend', 'static'),
 )
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 
 # Markdownify
