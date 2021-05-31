@@ -123,14 +123,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'frontend', 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'frontend', 'media')
-MEDIA_URL = '/media/'
-
-STATICFILES_DIRS = (
-    MEDIA_ROOT,
-)
-
-
 # Markdownify
 
 MARKDOWNIFY_WHITELIST_TAGS = [
