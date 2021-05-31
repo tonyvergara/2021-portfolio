@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% load markdownify %}
+{% load static %}
 
 {% block content %}
 
@@ -47,7 +48,7 @@
         <h2>{{ project.section1_title }}</h2>
         <p>{{ project.s1_body|markdownify|safe  }}</p>
       </div>
-      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section1_image.url }}"><figcaption class="figure-caption">{{ project.section4_image.description }}</figcaption></figure>
+      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section1_image.url }}"><figcaption class="figure-caption">{{ project.section1_image.description }}</figcaption></figure>
     </div>
     {% endif %}
     <hr>
@@ -64,7 +65,7 @@
         <h2>{{ project.section2_title }}</h2>
         <p>{{ project.s2_body|markdownify|safe  }}</p>
       </div>
-      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section2_image.url }}"><figcaption class="figure-caption">{{ project.section4_image.description }}</figcaption></figure>
+      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section2_image.url }}"><figcaption class="figure-caption">{{ project.section2_image.description }}</figcaption></figure>
     </div>
     {% endif %}
     <hr>
@@ -81,7 +82,7 @@
         <h2>{{ project.section3_title }}</h2>
         <p>{{ project.s3_body|markdownify|safe  }}</p>
       </div>
-      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section3_image.url }}"><figcaption class="figure-caption">{{ project.section4_image.description }}</figcaption></figure>
+      <figure class="col-lg-6 figure"><img style="width:100%;" src="{{ project.section3_image.url }}"><figcaption class="figure-caption">{{ project.section3_image.description }}</figcaption></figure>
     </div>
     {% endif %}
     <hr>
