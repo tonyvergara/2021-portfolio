@@ -1,7 +1,7 @@
 :root {
-  --brand1: #1e90ff;
-  --brand2: #ffffff;
-  --brand3: #f2f2f2;
+  --color-1: #0085A1;
+  --color-2: #ffffff;
+  --color-3: #f2f2f2;
   --brand4: #e0e0e0;
   --brand-dark: #131313;
   --brand-light: #f2f2f2;
@@ -26,14 +26,14 @@ h4,
 h5,
 h6 {
   font-family: 'Noto Serif JP', 'Times New Roman', serif;
-  font-weight: 800;
+  font-weight: 400;
 }
 a {
   color: #333333;
 }
 a:hover,
 a:focus {
-  color: #0085A1;
+  color: var(--brand1);
 }
 a img:hover,
 a img:focus {
@@ -259,7 +259,7 @@ hr.small {
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #0085A1;
+  color: var(--brand-1);
 }
 .post-preview > a > .post-title {
   font-size: 30px;
@@ -393,11 +393,38 @@ form .row:first-child .floating-label-form-group {
   border: 1px solid #0085A1;
   color: white;
 }
+
+.btn-primary {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  border: none;
+  border-radius: 0;
+}
+.btn-primary:hover , .btn-secondary:hover{
+  background-color: var(--color-2);
+  color: var(--color-1);
+  transition: .25s;
+}
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-1);
+  border-color: var(--color-1);
+  border-radius: 0;
+}
+.btn-link {
+  color: var(--color-1);
+}
 .btn-link::after {
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: '\f30b'; padding-left: 5px;text-decoration: none;display:inline-block;
 }
-.btn-primary {
-  background-color: var(--brand1);
+.btn-link > .btn-copy {
+  margin-right: 0;
+  margin-left: ;
+  transition: .25s;
+}
+.btn-link > .btn-copy:hover {
+  margin-right: 5px;
+  transition: .25s;
 }
 
 .pager {

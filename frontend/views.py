@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import client
 
 # Create your views here.
+global_files = client.entry('56c3sgivTfyHrEnbi9vBmJ')
 
 def home(request):
     return render(request, 'index.html', {
@@ -14,8 +15,7 @@ def home(request):
             {'content_type': 'testimonial', 'include': 3, 'limit': 6}
         ),'categories': client.entries(
             {'content_type': 'category', 'include': 3}
-        )
-
+        ),'global_files': global_files
     })
 
 
@@ -23,7 +23,7 @@ def blogs(request):
     return render(request, 'blog.html', {
         'blogs': client.entries(
             {'content_type': 'blogPost', 'include': 3}
-        )
+        ),'global_files': global_files
     })
 
 def blog_by_slug(request, slug):
@@ -31,15 +31,13 @@ def blog_by_slug(request, slug):
         blog = client.entries(
             {'content_type': 'blogPost', 'fields.slug': slug, 'include': 3}
         )[0]
-        return render(request, 'blog/post.html', {'blog': blog})
+        return render(request, 'blog/post.html', {'blog': blog,'global_files': global_files})
     except IndexError:
         raise Http404('Post not found for slug: {0}'.format(slug))
 
 def projects(request):
     return render(request, 'projects.html', {
-        'projects': client.entries(
-            {'content_type': 'project', 'include': 3}
-        )
+        'projects': client.entries({'content_type': 'project', 'include': 3}),'global_files': global_files
     })
 
 def project_by_slug(request, slug):
@@ -47,22 +45,19 @@ def project_by_slug(request, slug):
         project = client.entries(
             {'content_type': 'project', 'fields.slug': slug, 'include': 3}
         )[0]
-        return render(request, 'projects/project.html', {'project': project})
+        return render(request, 'projects/project.html', {'project': project,'global_files': global_files})
     except IndexError:
         raise Http404('Project not found for slug: {0}'.format(slug))
 
 def skills(request):
     return render(request, 'skills.html', {
-        'skills': client.entries(
-            {'content_type': 'skill', 'include': 3}
-        )
+        'skills': client.entries({'content_type': 'skill', 'include': 3}),'global_files': global_files
     })
 
 def categories(request):
     return render(request, 'categories.html', {
         'skills': client.entries(
-            {'content_type': 'category', 'include': 3}
-        )
+            {'content_type': 'category', 'include': 3}),'global_files': global_files
     })
 
 
@@ -71,6 +66,6 @@ def category_by_slug(request, slug):
         tag = client.entries(
             {'content_type': 'category', 'fields.slug': slug, 'include': 3}
         )[0]
-        return render(request, 'category.html', {'tag': tag})
+        return render(request, 'category.html', {'tag': tag,'global_files': global_files})
     except IndexError:
         raise Http404('Skill not found for slug: {0}'.format(slug))

@@ -12,7 +12,7 @@
           <span class='subheading'>UX Strategist and Researcher looking to use my background in psychology and neuroscience research to deliver products that make a positive impact in the world.</span>
           <div class='hero-cta'>
             <a class="btn btn-primary" href="/projects" role="button">See My Work</a>
-            <a class="btn btn-link text-warning" href="#contact" role="button">Get In Touch</a>
+            <a class="btn btn-link" href="#contact" role="button"><span class="btn-copy">Get In Touch</span></a>
           </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
   <h2 class="section-header">My Skills</h2>
   <div class='row'>
     {% for category in categories %}
-    <div class='col-lg-6'>
+    <div class='col-lg-3'>
         <div class='post-preview'>
           <img class='icon' src="{{category.icon.url}}">
           <a href="{{category.slug}}">
