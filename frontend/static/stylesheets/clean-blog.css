@@ -5,6 +5,7 @@
   --brand4: #e0e0e0;
   --brand-dark: #131313;
   --brand-light: #f2f2f2;
+  color-scheme: light dark;
 }
 
 body {
@@ -628,5 +629,5 @@ h2.section-header::before {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {background-color: #333;color: #fff;}
+  body {background-color: #333; color: #fff;}
 }

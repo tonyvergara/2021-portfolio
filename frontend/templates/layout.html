@@ -20,7 +20,7 @@
     <link href="{% static '/stylesheets/fontawesome/all.min.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static '/stylesheets/fontawesome/all.css' %}" rel="stylesheet" type="text/css" />
     {% else %}
-    {% for file in global_files.files %} <link href="{{file.url}}" rel="stylesheet" type="text/css" /> {% endfor %}
+    {% for file in global_files.files %} <link href="{{file.url}}" rel="stylesheet" /> {% endfor %}
     
     {% endif %}
     
