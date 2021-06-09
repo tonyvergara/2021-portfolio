@@ -630,5 +630,5 @@ h2.section-header::before {
 
 @media (prefers-color-scheme: dark) {
   body {background-color: #333; color: #fff;}
-  .post-heading {color: #fff}
+  .post-preview > a {color: #fff}
 }
