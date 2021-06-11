@@ -160,8 +160,13 @@
       </div>
     </footer>
   </body>
-
+  {% if request.build_absolute_uri|slice:"7:12" == 'local' %}
   <script src="{% static '/javascripts/jquery.min.js' %}"></script>
   <script src="{% static '/javascripts/bootstrap.min.js' %}"></script>
   <script src="{% static '/javascripts/clean-blog.js' %}"></script>
+  {% else %}
+  {% for file in global_files.js_files %} <link href="{{file.url}}" rel="stylesheet" type="text/css" /> {% endfor %}
+  
+  {% endif %}
+  
 </html>
