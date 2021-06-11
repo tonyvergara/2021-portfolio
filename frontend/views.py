@@ -1,9 +1,11 @@
 from django.http import Http404
 from django.shortcuts import render
 from .models import client
+from .forms import Search_Form
 
 # Create your views here.
 global_files = client.entry('56c3sgivTfyHrEnbi9vBmJ')
+
 
 def home(request):
     return render(request, 'index.html', {
@@ -36,8 +38,17 @@ def blog_by_slug(request, slug):
         raise Http404('Post not found for slug: {0}'.format(slug))
 
 def projects(request):
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = Search_Form(request.POST)
+        search = request.POST['search_term']
+        project_list = client.entries({'content_type': 'project', 'include': 3, 'query': search, 'limit':4})
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = Search_Form()
+        project_list = client.entries({'content_type': 'project', 'include': 3})
     return render(request, 'projects.html', {
-        'projects': client.entries({'content_type': 'project', 'include': 3}),'global_files': global_files
+        'projects': project_list,'global_files': global_files
     })
 
 def project_by_slug(request, slug):
