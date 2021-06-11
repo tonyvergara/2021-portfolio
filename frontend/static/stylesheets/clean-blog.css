@@ -632,3 +632,6 @@ h2.section-header::before {
   body {background-color: #333; color: #fff;}
   .post-preview > a {color: #fff}
 }
+form > input {
+  color: var(--color-1);
+}
