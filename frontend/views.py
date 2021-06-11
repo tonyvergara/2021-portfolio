@@ -49,7 +49,7 @@ def projects(request):
         form = Search_Form()
         project_list = client.entries({'content_type': 'project', 'include': 3})
     return render(request, 'projects.html', {
-        'projects': project_list,'global_files': global_files
+        'projects': project_list,'global_files': global_files,'form': form,'search_term': search_term
     })
 
 def project_by_slug(request, slug):
