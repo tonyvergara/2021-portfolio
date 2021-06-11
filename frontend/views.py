@@ -38,11 +38,12 @@ def blog_by_slug(request, slug):
         raise Http404('Post not found for slug: {0}'.format(slug))
 
 def projects(request):
+    search_term = ''
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = Search_Form(request.POST)
-        search = request.POST['search_term']
-        project_list = client.entries({'content_type': 'project', 'include': 3, 'query': search, 'limit':4})
+        search_term = request.POST['search_term']
+        project_list = client.entries({'content_type': 'project', 'include': 3, 'query': search_term})
     # if a GET (or any other method) we'll create a blank form
     else:
         form = Search_Form()
