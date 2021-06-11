@@ -43,7 +43,7 @@ def projects(request):
         # create a form instance and populate it with data from the request:
         form = Search_Form(request.POST)
         search_term = request.POST['search_term']
-        project_list = client.entries({'content_type': 'project', 'include': 3, 'query': search_term})
+        project_list = client.entries({'content_type': 'project', 'include': 3, 'query': search_term, 'fields.months[le]': '2'})
     # if a GET (or any other method) we'll create a blank form
     else:
         form = Search_Form()
