@@ -31,4 +31,16 @@
     </div>
   </div>
 </div>
+<div class="container">
+
+  <h2>{{tag.title}} Projects</h2>
+  <div class='row'>
+    {% for proj in tag.projects %}
+    <div class="col-lg-4 card project-card">
+      <div class"card-img"></div>
+      <div class"card-body"><a href='/projects/{{proj.slug}}'><h3>{{proj.project_title}}</h3></a><p>{{proj.description}}</p></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

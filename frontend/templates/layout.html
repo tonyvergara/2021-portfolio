@@ -165,7 +165,7 @@
   <script src="{% static '/javascripts/bootstrap.min.js' %}"></script>
   <script src="{% static '/javascripts/clean-blog.js' %}"></script>
   {% else %}
-  {% for file in global_files.js_files %} <link href="{{file.url}}" rel="stylesheet" type="text/css" /> {% endfor %}
+  {% for file in global_files.js_files %} <link src="{{file.url}}"/> {% endfor %}
   
   {% endif %}
   
