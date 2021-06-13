@@ -160,12 +160,12 @@
       </div>
     </footer>
   </body>
-  {% if request.build_absolute_uri|slice:"7:12" == 'local' %}
+  {% if request.build_absolute_uri|slice:"7:12" == 'loXal' %}
   <script src="{% static '/javascripts/jquery.min.js' %}"></script>
   <script src="{% static '/javascripts/bootstrap.min.js' %}"></script>
   <script src="{% static '/javascripts/clean-blog.js' %}"></script>
   {% else %}
-  {% for file in global_files.js_files %} <link src="{{file.url}}"> {% endfor %}
+  {% for file in global_files.js_files %} <script src="{{file.url}}"></script> {% endfor %}
   
   {% endif %}
   
