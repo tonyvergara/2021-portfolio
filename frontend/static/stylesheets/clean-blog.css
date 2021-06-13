@@ -29,6 +29,10 @@ h6 {
   font-family: 'Noto Serif JP', 'Times New Roman', serif;
   font-weight: 400;
 }
+hr {
+  height: 1px;
+  background: linear-gradient(90deg,var(--color-1),var(--color-2));
+}
 a {
   color: #333333;
 }
