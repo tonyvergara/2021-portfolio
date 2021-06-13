@@ -1,7 +1,7 @@
 :root {
   --color-1: #0085A1;
-  --color-2: #ffffff;
-  --color-3: #f2f2f2;
+  --color-2: #f2f2f2;
+  --color-3: #123456;
   --brand4: #e0e0e0;
   --brand-dark: #131313;
   --brand-light: #f2f2f2;
@@ -34,7 +34,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: var(--brand1);
+  color: var(--color-1);
 }
 a img:hover,
 a img:focus {
@@ -458,12 +458,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: var(--brand1);
+  background: var(--color-1);
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: var(--brand1);
+  background: var(--color-1);
 }
 img::selection {
   color: white;
@@ -474,7 +474,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  -webkit-tap-highlight-color: var(--brand1);
+  -webkit-tap-highlight-color: var(--color-1);
 }
 
 .testimonial span {
@@ -633,4 +633,27 @@ h2.section-header::before {
 }
 form > input {
   color: var(--color-1);
+}
+form > label {
+  text-transform: uppercase;
+}
+.cards { 
+  padding:10px 0;
+}
+a > .card:hover,.deliverables .card:hover,.modal-content .card:hover {
+  background-color: var(--color-1);
+  color: #fff;
+  transition: .125s;
+  text-decoration: none;
+}
+.card {
+  border-radius: 0;
+  border: 2px solid var(--color-1);
+  height:100%;
+  padding:5px 10px;
+}
+.project-card > .card-img {
+  position: relative;
+  width: 100%;
+  background-image: url({{proj.url}});
 }

@@ -18,7 +18,7 @@
 </header>
 <div class='container'>
   <div class='row'>
-    <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+    <div class='col-lg-8 col-md-10'>
       {% for skill in tag.skills %}
         <div>
           <h2 class='post-title'>{{ skill.title }}</h2>
@@ -31,15 +31,17 @@
     </div>
   </div>
 </div>
-<div class="container">
-
+<div class="container cards">
   <h2>{{tag.title}} Projects</h2>
   <div class='row'>
     {% for proj in tag.projects %}
-    <div class="col-lg-4 card project-card">
-      <div class"card-img"></div>
-      <div class"card-body"><a href='/projects/{{proj.slug}}'><h3>{{proj.project_title}}</h3></a><p>{{proj.description}}</p></div>
-    </div>
+    <div class="card-container col-md-4">
+      <a href='/projects/{{proj.slug}}'>
+          <div class="card color-primary project-card">
+            <div class="card-img"></div>
+            <div class="card-body"><h3>{{proj.project_title}}</h3><p>{{proj.description}}</p></div>
+          </div>
+        </a></div>
     {% endfor %}
   </div>
 </div>
