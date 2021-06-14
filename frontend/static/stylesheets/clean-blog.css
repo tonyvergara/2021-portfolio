@@ -634,6 +634,7 @@ h2.section-header::before {
 @media (prefers-color-scheme: dark) {
   body {background-color: #333; color: #fff;}
   .post-preview > a {color: #fff}
+  .category-icon {filter: invert(100%)}
 }
 form > input {
   color: var(--color-1);
