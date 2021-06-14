@@ -14,11 +14,10 @@
     {% endblock %}
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4e0b58941c.js" crossorigin="anonymous"></script>
     {% if request.build_absolute_uri|slice:"7:12" == 'local' %}
     <link href="{% static '/stylesheets/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static '/stylesheets/clean-blog.css' %}" rel="stylesheet" />
-    <link href="{% static '/stylesheets/fontawesome/all.min.css' %}" rel="stylesheet" type="text/css" />
-    <link href="{% static '/stylesheets/fontawesome/all.css' %}" rel="stylesheet" type="text/css" />
     {% else %}
     {% for file in global_files.files %} <link href="{{file.url}}" rel="stylesheet" type="text/css" /> {% endfor %}
     
