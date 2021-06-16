@@ -326,6 +326,13 @@ footer li {
 	list-style-type: none;
   padding: 5px 0;
 }
+footer li>a:hover {
+  text-decoration: none;
+  color: var(--color-1);
+}
+footer li>a:hover .footer-link-text{
+  color: var(--color-1);
+}
 .footer-link-text {
 	color:white;
 }
@@ -661,4 +668,10 @@ a > .card:hover,.deliverables .card:hover,.modal-content .card:hover {
   position: relative;
   width: 100%;
   background-image: url({{proj.url}});
+}
+.color-3 {
+  background-color: var(--color-3);
+}
+.color-2 {
+  background-color: var(--color-2);
 }

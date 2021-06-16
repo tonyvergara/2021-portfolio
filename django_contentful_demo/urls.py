@@ -20,6 +20,7 @@ from frontend import views
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
     url(r'^$', views.home),
+    url(r'^about$', views.about),
     url(r'^blog$', views.blogs),
     url(r'^blog/(?P<slug>[-\w]+)$', views.blog_by_slug),
     url(r'^projects$', views.projects),
@@ -27,5 +28,4 @@ urlpatterns = [
     url(r'^skills$', views.skills),
     url(r'^categories$', views.categories),
     url(r'^(?P<slug>[-\w]+)$', views.category_by_slug),
-    
 ]
