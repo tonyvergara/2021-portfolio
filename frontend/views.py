@@ -51,7 +51,7 @@ def projects(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = Search_Form()
-        project_list = client.entries({'content_type': 'project', 'include': 3})
+        project_list = client.entries({'content_type': 'project', 'order': ['-sys.createdAt', 'sys.id'], 'include': 3})
     return render(request, 'projects.html', {
         'projects': project_list,'global_files': global_files,'form': form,'search_term': search_term
     })

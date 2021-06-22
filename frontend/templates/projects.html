@@ -25,18 +25,22 @@
           <input class="btn btn-primary btn-sm" type="submit" value="Submit">
         </form>
       </div>
-      {% for project in projects %}
-        <div class='post-preview'>
-          <a  href="/projects/{{ project.slug }}">
-            <h2 class='post-title'>{{ project.project_title }}</h2>
-          </a>
-          {% if project.description %}
-            <p class='post-subtitle'>{{ project.description }}</p>
-          {% endif %}
-        </div>
-        <hr />
-      {% endfor %}
     </div>
-  </div>
+      <div class="container cards">
+        <h2>Lorem ipsum about how my Projects can range in size from single one-off engagements to longer term consultative work.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing sed quallam nulla eunque fortis bellaro</p>
+        <div class='row'>
+          {% for project in projects %}
+          <div class="card-container col-md-4">
+            <a href='/projects/{{project.slug}}'>
+                <div class="card color-primary project-card">
+                  <div class="card-img"></div>
+                  <div class="card-body"><h3>{{project.project_title}}</h3><hr style="margin-left: 0;" class="small"><p>{{project.description}}</p></div>
+                </div>
+              </a></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
 </div>
 {% endblock %}

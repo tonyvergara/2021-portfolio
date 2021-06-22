@@ -4,10 +4,10 @@
 
 
 {% block content %}
-<header class='intro-header' style="background-image: url('{{tag.hero_image.url}}')">
+<header class='intro-header'>
   <div class='container'>
     <div class='row'>
-      <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+      <div class='col-md-6'>
         <div class='site-heading'>
           <h1>About {{person.name}}</h1>
           <hr class='small' />
@@ -15,16 +15,28 @@
           <span class='subheading'>{{person.company}}</span>
       </div>
     </div>
+    <div class='col-md-6'>
+      <div class='bio-pic'>
+        <img style="width: 100%;" src="{{person.image.url}}">
+      </div>
+    </div>
+    
   </div>
 </header>
 <div class='container color-2'>
   <div class='row'>
     <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-      <h4 class='subheading'>{{person.short_bio}}</span>
+      <h2 class='subheading'>{{person.short_bio}}</h2>
     </div>
   </div>
 </div>
-
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+      {{person.biography|markdownify|safe }}
+    </div>
+  </div>
+</div>
 <div class="container cards">
   <h2>{{tag.title}} Projects</h2>
   <div class='row'>

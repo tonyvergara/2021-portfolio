@@ -156,8 +156,8 @@ hr.small {
   }
 }
 .intro-header {
-  background-color: #777777;
-  background: no-repeat center center;
+  background-color: var(--color-1);
+  /*background: no-repeat center center;*/
   background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -317,6 +317,9 @@ footer {
 footer .list-inline {
   margin: 0;
   padding: 0;
+}
+footer ul {
+  padding-left: 0;
 }
 footer .copyright {
   font-size: 14px;
@@ -663,6 +666,9 @@ a > .card:hover,.deliverables .card:hover,.modal-content .card:hover {
   border: 2px solid var(--color-1);
   height:100%;
   padding:5px 10px;
+}
+.card-container {
+  padding-bottom: 15px;
 }
 .project-card > .card-img {
   position: relative;
