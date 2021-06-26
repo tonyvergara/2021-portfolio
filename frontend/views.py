@@ -22,7 +22,7 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html', {
-        'person': client.entry('4oem3H3VM1DMnC4Vq8fqAS'),'blogs': client.entries({'content_type': 'blogPost','fields.author.sys.id': '4oem3H3VM1DMnC4Vq8fqAS'}),'global_files': global_files
+        'person': client.entry('4oem3H3VM1DMnC4Vq8fqAS'),'blogs': client.entries({'content_type': 'blogPost','fields.author.sys.id': '4oem3H3VM1DMnC4Vq8fqAS'}),'recognition': client.entries({'content_type': 'recognition', 'include': 3}),'global_files': global_files
     })
 
 def blogs(request):
