@@ -4,7 +4,7 @@
 {% block content %}
 
 {% if not project.hero_image %}
-<header class='intro-header' style="background:linear-gradient(var(--color-1), var(--color-3));">
+<header class='intro-header' style="background:var(--color-1);">
 {% else %}
 <header class='intro-header' style="background-image: url('{{project.hero_image.url}}')">
 {% endif %}

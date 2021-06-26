@@ -681,3 +681,6 @@ a > .card:hover,.deliverables .card:hover,.modal-content .card:hover {
 .color-2 {
   background-color: var(--color-2);
 }
+.color-1 {
+  background-color: var(--color-1);
+}
