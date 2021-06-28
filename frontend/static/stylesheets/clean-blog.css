@@ -331,9 +331,12 @@ footer li {
 }
 footer li>a:hover {
   text-decoration: none;
-  color: var(--color-1);
+  color: var(--color-2);
 }
 footer li>a:hover .footer-link-text{
+  color: var(--color-2);
+}
+footer li>a:hover .fa-circle{
   color: var(--color-1);
 }
 .footer-link-text {
@@ -426,18 +429,38 @@ form .row:first-child .floating-label-form-group {
   border-radius: 0;
 }
 .btn-link {
-  color: var(--color-1);
+  display: inline-block;
+  position: relative;
+  color: var(--color-2);
 }
+
+
+.btn-link:hover {
+  color: var(--brand-light);
+}
+
+
 .btn-link::after {
-  font-family: "Font Awesome 5 Free"; font-weight: 900; content: '\f30b'; padding-left: 5px;text-decoration: none;display:inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 10px;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
+
+.btn-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .btn-link > .btn-copy {
   margin-right: 0;
   margin-left: ;
-  transition: .25s;
-}
-.btn-link>.btn-copy:hover::after {
-  transform: translateX(15px);
   transition: .25s;
 }
 
@@ -617,17 +640,10 @@ body {
 }
 
 h2.section-header {
-	padding-top:50px;
-	padding-bottom:25px;
+	padding-top:40px;
+	padding-bottom:20px;
 
 }
-
-h2.section-header::after {
-	content: " ———";
-
-}
-h2.section-header::before {
-	content: "——— ";
 
 }
 h6, .h6 {text-transform: uppercase;font-weight: 700;}
@@ -674,7 +690,6 @@ a > .card:hover,.deliverables .card:hover,.modal-content .card:hover {
 .project-card > .card-img {
   position: relative;
   width: 100%;
-  background-image: url({{proj.url}});
 }
 .color-3 {
   background-color: var(--color-3);
@@ -684,4 +699,27 @@ a > .card:hover,.deliverables .card:hover,.modal-content .card:hover {
 }
 .color-1 {
   background-color: var(--color-1);
+}
+.container {
+  padding-top: 40px;
+  padding-bottom:  40px;
+}
+header .container {
+  margin-top: 0;
+}
+.icon-list {
+  background-color: var(--color-1);
+}
+.icon-list a, .icon-list h2 {
+  color: var(--color-2);
+}
+.icon-list a:hover {
+  color: var(--brand-light);
+}
+.icon-card {
+  padding-bottom: 30px;
+}
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
 }

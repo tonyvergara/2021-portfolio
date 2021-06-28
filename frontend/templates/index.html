@@ -12,81 +12,70 @@
           <span class='subheading'>UX Strategist and Researcher looking to use my background in psychology and neuroscience research to deliver products that make a positive impact in the world.</span>
           <div class='hero-cta'>
             <a class="btn btn-primary btn-lg" href="/projects" role="button">See My Work</a>
-            <a class="btn btn-link" href="#contact" role="button"><span class="btn-copy">Get In Touch</span></a>
+            <a class="btn btn-link btn-lg" href="#contact" role="button"><span class="btn-copy">Get In Touch</span></a>
           </div>
       </div>
     </div>
   </div>
 </header>
-<div class='container'>
-  <h2 class="section-header">My Skills</h2>
-  <div class='row'>
-    {% for category in categories %}
-    <div class='col-lg-3'>
-        <div class='post-preview'>
-          <img class='icon category-icon' src="{{category.icon.url}}">
-          <a href="{{category.slug}}">
-            <h3>{{ category.title }}</h3>
-          </a>
-          {% if category.description %}
-            <p class='post-subtitle'>{{ category.description }}</p>
-          {% endif %}
-        </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
-<div class='container'>
-  <h2 class="section-header">Recent Projects</h2>
-  <div class='row'>
-    {% for project in projects %}
-    <div class='col-lg-6'>
-        <div class='post-preview'>
-          <a href="/projects/{{ project.slug }}">
-            <h3>{{ project.project_title }}</h3>
-          </a>
-          {% if project.description %}
-            <p class='post-subtitle'>{{ project.description }}</p>
-          {% endif %}
-        </div>
-    </div>
-    {% endfor %}
-  </div>
-  <a class="btn btn-primary btn-lg" href="/projects" role="button">See All Projects</a>
-</div>
-<div class='container'>
-  <h2 class="section-header">Recent Blogs</h2>
-  <div class='row'>
-    {% for post in blogs %}
-    <div class='col-lg-8'>
-        <div class='post-preview'>
-          <a href="/blog/{{ post.slug }}">
-            <h3>{{ post.title }}</h3>
-          </a>
-          {% if post.subtitle %}
-            <p class='post-subtitle'>{{ post.subtitle }}</p>
-          {% endif %}
-          <p class='post-meta'>Written by
-            <a href="/about">{{ post.author.name }}</a>
-            on {{ post.publication_date|date:"d/M/Y" }}
-          </p>
-        </div>
-      
-    </div>
-    {% endfor %}
-  </div>
-</div>
-<div class=''>
-  <div class='container'><h2 class="section-header">Recent Testimonials</h2></div>
-  <div class='cards row'>
-    <div class='testimonial'>
-      {% for quote in testimonials %}
-        <div class='col-lg-4 col-md-6 col-sm-12 card' style="padding:20px;background-color:#f2f2f2;">
-          <img style="position:absolute;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTMgMTQuNzI1YzAtNS4xNDEgMy44OTItMTAuNTE5IDEwLTExLjcyNWwuOTg0IDIuMTI2Yy0yLjIxNS44MzUtNC4xNjMgMy43NDItNC4zOCA1Ljc0NiAyLjQ5MS4zOTIgNC4zOTYgMi41NDcgNC4zOTYgNS4xNDkgMCAzLjE4Mi0yLjU4NCA0Ljk3OS01LjE5OSA0Ljk3OS0zLjAxNSAwLTUuODAxLTIuMzA1LTUuODAxLTYuMjc1em0tMTMgMGMwLTUuMTQxIDMuODkyLTEwLjUxOSAxMC0xMS43MjVsLjk4NCAyLjEyNmMtMi4yMTUuODM1LTQuMTYzIDMuNzQyLTQuMzggNS43NDYgMi40OTEuMzkyIDQuMzk2IDIuNTQ3IDQuMzk2IDUuMTQ5IDAgMy4xODItMi41ODQgNC45NzktNS4xOTkgNC45NzktMy4wMTUgMC01LjgwMS0yLjMwNS01LjgwMS02LjI3NXoiLz48L3N2Zz4=">
-          <div><p>{{ quote.quote_text }}</p></div>
-        </div>
+<div class='icon-list'>
+  <div class='container'>
+    <h2 class="section-header">My Skills</h2>
+    <div class='row'>
+      {% for category in categories %}
+      <div class='col-lg-3 icon-card'>
+          <div class='post-preview'>
+            <img class='icon category-icon' src="{{category.icon.url}}">
+            <a href="{{category.slug}}">
+              <h3>{{ category.title }}</h3>
+            </a>
+          </div>
+      </div>
       {% endfor %}
     </div>
+  </div>
+</div>
+<hr>
+<div class='color-2'>
+  <div class='container'>
+    <h2 class="section-header">Recent Projects</h2>
+    <div class='row'>
+      {% for project in projects %}
+      <div class="card-container col-md-6">
+        <a href='/projects/{{project.slug}}'>
+          <div class="card color-primary project-card">
+            <div class="card-img"><img style='width:100%;max-height:200px' src='{{project.hero_image.url}}'</img></div>
+            <div class="card-body"><h3>{{project.project_title}}</h3><hr style="margin-left: 0;" class="small"><p>{{project.description}}</p></div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="btn btn-primary btn-lg" href="/projects" role="button">See All Projects</a>
+  </div>
+</div>
+<hr>
+<div class='container'>
+  <div class='row'>
+    <div class="col-lg-4">
+      <h2 class="">Recent Blogs</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing sed quallam nulla eunque fortis.</p>
+      <a class="btn btn-primary btn-lg" href="/blog" role="button">See All Blogs</a>
+    </div>
+    
+    <div class='col-lg-8'>
+      {% for post in blogs %}
+        <div class="card-container">
+            <a href='/projects/{{project.slug}}'>
+              <div class="card color-primary project-card">
+                <div class="card-img"></div>
+                <div class="card-body"><h3>{{post.title}}</h3><p>{{post.description}}</p></div>
+              </div>
+            </a>
+          </div>
+    {% endfor %}  
+    </div>
+    
   </div>
 </div>
 {% endblock %}
