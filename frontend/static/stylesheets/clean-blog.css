@@ -1,9 +1,9 @@
 :root {
-  --color-1: #0085A1;
-  --color-2: #f2f2f2;
-  --color-3: #123456;
-  --brand4: #e0e0e0;
-  --brand-dark: #131313;
+  --color-1: #1B3022;
+  --color-2: #FFDF64;
+  --color-3: #AFC97E;
+  --color-4: #0085A1;
+  --brand-dark: #151514;
   --brand-light: #f2f2f2;
   color-scheme: light dark;
 }
@@ -102,7 +102,7 @@ hr.small {
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-3);
   }
   .navbar .container-fluid {
 	flex-wrap: nowrap;
