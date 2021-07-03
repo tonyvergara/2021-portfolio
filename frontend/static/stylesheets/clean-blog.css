@@ -83,6 +83,24 @@ hr.small {
 .navbar .container-fluid {
 	flex-wrap: wrap;
 }
+.navbar-custom {
+  background-color: var(--color-1);
+}
+.navbar-custom .navbar-brand {
+  color: white;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: var(--color-3);
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: var(--color-2);
+}
+.navbar-custom .navbar-header .navbar-toggle {
+  color: white;
+}
+.navbar-default {
+  border-color: inherit;
+}
 @media only screen and (min-width: 768px) {
   .navbar-custom {
     background: transparent;
@@ -106,6 +124,12 @@ hr.small {
   }
   .navbar .container-fluid {
 	flex-wrap: nowrap;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -246,7 +270,9 @@ hr.small {
     bottom: 0px;
     left: 0px;
     /*background-color: rgba(0,0,0,0.5);*/
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.35) 100%);
+    /*background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.35) 100%);*/
+    background: var(--color-1);
+    opacity: .6;
 }
 
 
@@ -435,33 +461,36 @@ form .row:first-child .floating-label-form-group {
 }
 
 
-.btn-link:hover {
-  color: var(--brand-light);
+.btn-link .btn-copy:hover {
+  /*color: var(--brand-light);*/
+  color: var(--color-2);
+  text-decoration: none;
 }
 
 
-.btn-link::after {
+.btn-link .btn-copy::after {
   position: absolute;
   content: '';
   width: 100%;
   transform: scaleX(0);
   height: 2px;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
-  background-color: white;
+  background-color: var(--color-2);
   transform-origin: bottom right;
   transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-.btn-link:hover::after {
+.btn-link:hover .btn-copy::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
 .btn-link > .btn-copy {
   margin-right: 0;
-  margin-left: ;
+  margin-left: 0;
   transition: .25s;
+  font-weight: 700;
 }
 
 .pager {
@@ -691,8 +720,12 @@ a > .card:hover,.deliverables .card:hover,.modal-content .card:hover {
   position: relative;
   width: 100%;
 }
+.color-4 {
+  background-color: var(--color-4);
+}
 .color-3 {
-  background-color: var(--color-3);
+  /*background-color: var(--color-3);*/
+  background: linear-gradient(to top, var(--color-2) 0%, var(--color-3) 80%, var(--color-3) 100%);
 }
 .color-2 {
   background-color: var(--color-2);
@@ -722,4 +755,12 @@ header .container {
 hr {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+.navbar-brand {
+  color: white;
 }

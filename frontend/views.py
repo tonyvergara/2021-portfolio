@@ -5,6 +5,8 @@ from .forms import Search_Form
 
 # Create your views here.
 global_files = client.entry('56c3sgivTfyHrEnbi9vBmJ')
+homepage_hero = client.asset('tOJTEsQpMF6iyybVBEAKt')
+
 
 
 def home(request):
@@ -17,7 +19,8 @@ def home(request):
             {'content_type': 'testimonial', 'include': 3, 'limit': 6}
         ),'categories': client.entries(
             {'content_type': 'category', 'include': 3}
-        ),'global_files': global_files
+        ),'global_files': global_files,
+        'hero_image' : homepage_hero,
     })
 
 def about(request):
