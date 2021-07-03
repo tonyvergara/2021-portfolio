@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block content %}
-<header class='intro-header' style="background-image: url('{{hero_image.url}}')">
+<header class='intro-header' style="background-image: url('{{hero_image.url}}');margin-bottom:0;">
   <div class='container'>
     <div class='row'>
-      <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+      <div class='col-lg-6'>
         <div class='site-heading'>
           <h1>Vergara Creative Labs</h1>
           <hr class='small' />
@@ -20,7 +20,7 @@
 </header>
 <div class='icon-list'>
   <div class='container text-center'>
-    <h2 class="section-header">My Skills</h2>
+    <h2 class="section-header">Our Skills</h2>
     <div class='row'>
       {% for category in categories %}
       <div class='col-lg-3 col-sm-6 icon-card'>
