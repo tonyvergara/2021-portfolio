@@ -1,8 +1,9 @@
 :root {
-  --color-1: #1B3022;
-  --color-2: #FFDF64;
-  --color-3: #AFC97E;
-  --color-4: #0085A1;
+  --color-1: #232323;
+  --color-2: #66FFB3;
+  --color-3: #b1ff65;
+  --color-4: #B266FF;
+  --color-5: #FF66B3;
   --brand-dark: #151514;
   --brand-light: #f2f2f2;
   color-scheme: light dark;
@@ -112,7 +113,7 @@ hr.small {
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-2);
   }
   .navbar-custom .nav li a {
     color: white;
@@ -150,18 +151,18 @@ hr.small {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
     top: -71px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--color-1);
     border-bottom: 1px solid #f2f2f2;
     -webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
   }
   .navbar-custom.is-fixed .navbar-brand {
-    color: #333333;
+    color: white;
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #0085A1;
+    color: var(--color-2);
   }
   .navbar-custom.is-fixed .nav li a {
     color: #333333;
@@ -177,6 +178,9 @@ hr.small {
     -ms-transform: translate3d(0, 100%, 0);
     -o-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
+  }
+  .navbar-default .btn-link {
+    color: #ffffff;
   }
 }
 .intro-header {
@@ -284,6 +288,15 @@ hr.small {
     font-size: 30px;
   }
 }
+@media only screen and (min-width: 1170px) {
+  .intro-header .site-heading {
+    text-align: left;
+  }
+  .intro-header .site-heading hr {
+    margin-left: 0;
+  }
+}
+
 .post-preview > a {
   color: #333333;
 }
@@ -485,6 +498,10 @@ form .row:first-child .floating-label-form-group {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+.btn-link:focus, .btn-link:hover {
+  color: var(--color-2);
+  text-decoration: none;
+}
 
 .btn-link > .btn-copy {
   margin-right: 0;
@@ -683,8 +700,14 @@ h6, .h6 {text-transform: uppercase;font-weight: 700;}
   width: 75px;
   stroke: #00a4f7;
 }
-.hero-cta {
+.hero-cta > .btn-primary {
   margin: 20px auto;
+  background-color: var(--color-2);
+  color: var(--color-1);
+}
+.btn-primary:hover {
+  background-color: var(--color-1);
+  color: var(--color-2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -763,4 +786,7 @@ hr {
 }
 .navbar-brand {
   color: white;
+}
+.m_auto {
+  margin: auto;
 }

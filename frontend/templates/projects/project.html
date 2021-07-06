@@ -4,9 +4,9 @@
 {% block content %}
 
 {% if not project.hero_image %}
-<header class='intro-header' style="background:var(--color-1);">
+<header class='intro-header' style="background:var(--color-1);margin-bottom:0">
 {% else %}
-<header class='intro-header' style="background-image: url('{{project.hero_image.url}}')">
+<header class='intro-header' style="background-image: url('{{project.hero_image.url}}');margin-bottom:0">
 {% endif %}
   <div class='container'>
     <div class='row'>
@@ -26,14 +26,15 @@
 </header>
 
 <article>
-  <div class='container'>
-    <div class='row'>
-      <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+  <div class='color-4'>
+    <div class='container text-center'>
+      <div class='col-lg-8 m_auto' style='float:inherit;'>
         <h2>{{ project.summary_heading }}</h2>
-        {{ project.summary_body }}
+        <p>{{ project.summary_body }}</p>
       </div>
     </div>
-    <hr>
+  </div>
+  <div class='container'>
     {% if not project.section1_image %}
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2'>

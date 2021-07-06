@@ -4,18 +4,25 @@
 
 
 {% block content %}
-<header class='intro-header' style="background-image: url('{{tag.hero_image.url}}')">
+<header class='intro-header color-4' style="background-image: url('{{tag.hero_image.url}}')">
   <div class='container'>
     <div class='row'>
-      <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-        <div class='site-heading'>
+      <div class='col-md-6'>
+        <div class='site-heading text-left'>
           <h1>{{tag.title}}</h1>
           <hr class='small' />
           <span class='subheading'>{{tag.description}}</span>
       </div>
     </div>
+    <div class='col-md-6'>
+      <div class='bio-pic'>
+        <img style="width: 100%;" src="{{tag.hero_foreground.url}}">
+      </div>
+    </div>
+    
   </div>
 </header>
+
 <div class='container'>
   <div class='row'>
     <div class='col-lg-8 col-md-10'>

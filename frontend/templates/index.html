@@ -23,9 +23,9 @@
     <h2 class="section-header">Our Skills</h2>
     <div class='row'>
       {% for category in categories %}
-      <div class='col-lg-3 col-sm-6 icon-card'>
+      <div class='col-lg-3 col-xs-6 icon-card'>
           <div class='post-preview'>
-            <img class='icon category-icon' src="{{category.icon.url}}">
+            <img class='icon category-icon' src="{{category.icon.url}}" style="filter: invert(81%) sepia(42%) saturate(572%) hue-rotate(40deg) brightness(108%) contrast(103%);">
             <a href="{{category.slug}}">
               <h3>{{ category.title }}</h3>
             </a>
@@ -35,7 +35,7 @@
     </div>
   </div>
 </div>
-<div class='color-3'>
+<div class='color-2'>
   <div class='container'>
     <h2 class="section-header">Recent Projects</h2>
     <div class='row'>
@@ -43,7 +43,7 @@
       <div class="card-container col-md-6">
         <a href='/projects/{{project.slug}}'>
           <div class="card color-primary project-card">
-            <div class="card-img"><img style='width:100%;max-height:200px' src='{{project.hero_image.url}}'</img></div>
+            <div class="card-img" style='max-height:200px;overflow:hidden;'><img style='width:100%' src='{{project.hero_image.url}}'</img></div>
             <div class="card-body"><h3>{{project.project_title}}</h3><hr style="margin-left: 0;" class="small"><p>{{project.description}}</p></div>
           </div>
         </a>
