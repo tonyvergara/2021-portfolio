@@ -20,13 +20,13 @@
 <div class='container'>
   <a href="{{ item.slug }}"><h2 class='post-title'>{{ item.title }}</h2></a>
   <div class='row'>
-    <div style='display:flex;align-items:center;'>
+    <div style='display:flex;align-items:center;flex-wrap: wrap;'>
 
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12">
           <p>{{ item.description|markdownify|safe }}</p>
         </div>
         {% if item.skills %}
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12">
           {% if item.skills|length >= 6 %}
           <ul class="two-col-list">
           {% else %}
