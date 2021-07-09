@@ -179,9 +179,9 @@ hr.small {
     -o-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
-  .navbar-default .btn-link {
-    color: #ffffff;
-  }
+}
+.navbar-default .btn-link {
+  color: #ffffff;
 }
 .intro-header {
   background-color: var(--color-1);
@@ -287,14 +287,15 @@ hr.small {
   .intro-header .post-heading .subheading {
     font-size: 30px;
   }
-}
-@media only screen and (min-width: 1170px) {
   .intro-header .site-heading {
     text-align: left;
   }
   .intro-header .site-heading hr {
     margin-left: 0;
   }
+}
+@media only screen and (min-width: 1170px) {
+  
 }
 
 .post-preview > a {
