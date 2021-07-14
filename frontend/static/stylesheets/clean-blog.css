@@ -699,7 +699,9 @@ body {
 	justify-content: space-between;
 	padding:20px 0;
 }
-
+.category-icon:hover {
+  cursor: inherit;
+}
 h2.section-header {
 	padding-top:40px;
 	padding-bottom:20px;

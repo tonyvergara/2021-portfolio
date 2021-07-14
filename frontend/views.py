@@ -5,7 +5,7 @@ from .forms import Search_Form
 
 # Create your views here.
 global_files = client.entry('56c3sgivTfyHrEnbi9vBmJ')
-homepage_hero = client.asset('tOJTEsQpMF6iyybVBEAKt')
+homepage_hero = client.asset('2Rlq0E36tgtmPnrE6DCxjT')
 
 
 
