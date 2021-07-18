@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<header class='intro-header' style="background-image: url('{% static "images/home-bg.jpg" %}')">
+  <div class='container'>
+    <div class='row'>
+      <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+        <div class='site-heading'>
+          <h1>{{workshops.title}}</h1>
+          <hr class='small' />
+          <p>{{workshops.description}}</p>
+          
+      </div>
+    </div>
+  </div>
+</header>
+<div class='container'>
+  
+  <div class='row'>
+      <div class="container cards">
+        <div class='row'>
+          {% for activity in workshop.activities %}
+          <div class="card-container col-md-4">
+            <div class="card color-primary project-card">
+              <div class="card-body"><h3>{{activity.title}}</h3><hr style="margin-left: 0;" class="small"><p>{{activity.description}}</p></div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

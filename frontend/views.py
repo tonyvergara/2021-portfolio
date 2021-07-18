@@ -35,6 +35,16 @@ def blogs(request):
         ),'global_files': global_files
     })
 
+def workshop_detail(request, slug):
+    try:
+        workshops = client.entries(
+            {'content_type': 'workshops', 'fields.slug': slug, 'include': 3}
+        )[0]
+        return render(request, 'workshops.html', {'workshops': workshops,'global_files': global_files})
+    except IndexError:
+        raise Http404('Workshop not found for slug: {0}'.format(slug))
+
+
 def blog_by_slug(request, slug):
     try:
         blog = client.entries(

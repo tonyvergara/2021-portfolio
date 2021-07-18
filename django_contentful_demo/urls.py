@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^skills$', views.skills),
     url(r'^categories$', views.categories),
     url(r'^(?P<slug>[-\w]+)$', views.category_by_slug),
+    url(r'^workshops/(?P<slug>[-\w]+)$', views.workshop_detail),
 ]
