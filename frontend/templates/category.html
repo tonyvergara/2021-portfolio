@@ -28,9 +28,15 @@
     <div class='col-lg-8 col-md-10'>
       {% for skill in tag.skills %}
         <div>
+          {% if tag.slug == "workshops" %}
+          <a href="/workshops/{{skill.slug}}">
+          {% endif %}  
           <h2 class='post-title'>{{ skill.title }}</h2>
           {% if skill.description %}
           <p>{{ skill.description|markdownify|safe }}</p>
+          {% endif %}
+          {% if tag.slug == "workshops" %}
+          </a>
           {% endif %}
         </div>
         <hr />
