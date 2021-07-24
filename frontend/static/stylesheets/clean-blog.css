@@ -213,6 +213,16 @@ hr.small {
   color: black;
 }
 
+@media only screen and (max-width: 768px) {
+  .btn-link .footer-link-text {
+    display: none;
+  }
+  .outlinks {
+    display: inline-flex;
+  }
+
+}
+
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
   .intro-header .post-heading,
