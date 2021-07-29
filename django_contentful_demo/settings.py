@@ -139,7 +139,8 @@ MARKDOWNIFY_WHITELIST_TAGS = [
     'ol',
     'p',
     'strong',
-    'ul'
+    'ul',
+    'q'
 ]
 for i in range(1, 6):
     MARKDOWNIFY_WHITELIST_TAGS.append('h{0}'.format(i))

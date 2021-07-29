@@ -1,9 +1,9 @@
 :root {
   --color-1: #232323;
   --color-2: #66FFB3;
-  --color-3: #b1ff65;
-  --color-4: #B266FF;
-  --color-5: #FF66B3;
+  --color-3: #6666FF;
+  --color-4: #FF66B3;
+  --color-5: #FFFF66;
   --brand-dark: #151514;
   --brand-light: #f2f2f2;
   color-scheme: light dark;
@@ -55,6 +55,9 @@ hr.small {
   border-width: 4px;
   border-color: white;
 }
+q:before,q:after{content:''}
+q{background-color:#f2f2f2;display:block;padding:10px;border-left:5px solid #66FFB3;margin-top:10px;margin-bottom:10px;}
+
 .navbar-custom {
   position: absolute;
   top: 0;
@@ -501,7 +504,7 @@ form .row:first-child .floating-label-form-group {
 
 .btn-link .btn-copy:hover {
   /*color: var(--brand-light);*/
-  color: var(--color-2);
+  color: var(--color-5);
   text-decoration: none;
 }
 
@@ -514,7 +517,7 @@ form .row:first-child .floating-label-form-group {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--color-2);
+  background-color: var(--color-5);
   transform-origin: bottom right;
   transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -534,6 +537,8 @@ form .row:first-child .floating-label-form-group {
   transition: .25s;
   font-weight: 700;
 }
+.outlink-icon {color: var(--color-1);}
+.outlink:hover .outlink-icon, .outlink:hover .outlink-text {color: var(--color-5)}
 
 .pager {
   margin: 20px 0 0;
@@ -733,8 +738,8 @@ h6, .h6 {text-transform: uppercase;font-weight: 700;}
   color: var(--color-1);
 }
 .btn-primary:hover {
-  background-color: var(--color-1);
-  color: var(--color-2);
+  background-color: var(--color-5);
+  color: var(--color-1);
 }
 
 @media (prefers-color-scheme: dark) {
