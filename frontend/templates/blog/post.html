@@ -17,8 +17,8 @@
             <h2 class='subheading'>{{ blog.description }}</h2>
           {% endif %}
           <span class='meta'>Written by
-            <a href="#">{{ blog.author.name }}</a>
-            on {{ blog.publication_date|date:"d/M/Y" }}
+            <a href="/about">{{ blog.author.name }}</a>
+            on {{ blog.publish_date|date:"F d, Y" }}
           </span>
         </div>
       </div>
