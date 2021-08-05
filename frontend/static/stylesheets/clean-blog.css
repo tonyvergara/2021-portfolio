@@ -108,6 +108,11 @@ q{background-color:#f2f2f2;display:block;padding:10px;border-left:5px solid #66F
 .navbar-default .btn-link {
   color: #ffffff;
 }
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 @media only screen and (min-width: 768px) {
   .navbar-custom {
     background: transparent;
