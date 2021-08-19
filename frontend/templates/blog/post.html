@@ -2,6 +2,7 @@
 {% load markdownify %}
 
 {% block content %}
+<head><title>{{ blog.title }} | Tony Vergara</title></head>
 
 {% if not blog.hero_image %}
 <header class='intro-header'>
@@ -32,6 +33,7 @@
       <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
         {{ blog.body|markdownify }}
       </div>
+      
     </div>
   </div>
 </article>

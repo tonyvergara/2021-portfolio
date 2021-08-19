@@ -4,6 +4,7 @@
 {% block content %}
 
 {% if not project.hero_image %}
+<head><title>{{ project.project_title }} | Tony Vergara</title></head>
 <header class='intro-header' style="background:var(--color-1);margin-bottom:0">
 {% else %}
 <header class='intro-header' style="background-image: url('{{project.hero_image.url}}');margin-bottom:0">
@@ -36,14 +37,14 @@
   </div>
   <div class='container'>
     {% if not project.section1_image %}
-    <div class='row'>
+    <div class='row project-section'>
       <div class='col-lg-8 col-lg-offset-2'>
         <h2>{{ project.section1_title }}</h2>
         <p>{{ project.s1_body|markdownify|safe  }}</p>
       </div>
     </div>
     {% else %}
-    <div class='row'>
+    <div class='row project-section'>
       <div class='col-lg-6'>
         <h2>{{ project.section1_title }}</h2>
         <p>{{ project.s1_body|markdownify|safe  }}</p>
@@ -53,14 +54,14 @@
     {% endif %}
     <hr>
     {% if not project.section2_image %}
-    <div class='row'>
+    <div class='row project-section'>
       <div class='col-lg-8 col-lg-offset-2'>
         <h2>{{ project.section2_title }}</h2>
         <p>{{ project.s2_body|markdownify|safe  }}</p>
       </div>
     </div>
     {% else %}
-    <div class='row'>
+    <div class='row project-section'>
       <div class='col-lg-6'>
         <h2>{{ project.section2_title }}</h2>
         <p>{{ project.s2_body|markdownify|safe  }}</p>
@@ -70,14 +71,14 @@
     {% endif %}
     <hr>
     {% if not project.section3_image %}
-    <div class='row'>
+    <div class='row project-section'>
       <div class='col-lg-8 col-lg-offset-2'>
         <h2>{{ project.section3_title }}</h2>
         <p>{{ project.s3_body|markdownify|safe  }}</p>
       </div>
     </div>
     {% else %}
-    <div class='row'>
+    <div class='row project-section'>
       <div class='col-lg-6'>
         <h2>{{ project.section3_title }}</h2>
         <p>{{ project.s3_body|markdownify|safe  }}</p>
@@ -87,14 +88,14 @@
     {% endif %}
     <hr>
     {% if not project.section4_image %}
-    <div class='row'>
+    <div class='row project-section'>
       <div class='col-lg-8 col-lg-offset-2'>
         <h2>{{ project.section4_title }}</h2>
         <p>{{ project.s4_body|markdownify|safe }}</p>
       </div>
     </div>
     {% else %}
-    <div class='row'>
+    <div class='row project-section'>
       <div class='col-lg-6'>
         <h2>{{ project.section4_title }}</h2>
         <p>{{ project.s4_body|markdownify|safe }}</p>
@@ -120,7 +121,7 @@
           </div>
         </div></div>
         {% endif %}
-        {% if deliverable.file.contentType == 'image/jpeg' %}
+        {% if deliverable.file.contentType == 'image/jpeg' or deliverable.file.contentType == 'image/png'%}
         <div class="card-container col-md-4"><div class="card" onclick="openModal();currentSlide({{ forloop.counter }})">
           <img style="width:100%" src="{{deliverable.url}}" class="hover-shadow">
           <span>{{ deliverable.title }}</span>
@@ -160,7 +161,7 @@
       <div class="row">
         {% for deliverable in project.deliverables %}
         <div class="col-lg-4">
-          {% if deliverable.file.contentType == 'image/jpeg' %}
+          {% if deliverable.file.contentType == 'image/jpeg' or deliverable.file.contentType == 'image/png' %}
           <img class="demo" style="width:100%" src="{{deliverable.url}}" onclick="currentSlide({{ forloop.counter }})" alt="{{deliverable.title}}">
           {% endif %}
           {% if deliverable.file.contentType == 'application/pdf' %}

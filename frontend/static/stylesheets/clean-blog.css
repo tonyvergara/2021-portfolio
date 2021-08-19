@@ -55,8 +55,8 @@ hr.small {
   border-width: 4px;
   border-color: white;
 }
-q:before,q:after{content:''}
-q{background-color:#f2f2f2;display:block;padding:10px;border-left:5px solid #66FFB3;margin-top:10px;margin-bottom:10px;}
+q:before,q:after,blockquote:before,blockquote:after{content:''}
+q,blockquote{background-color:#f2f2f2;display:block;padding:10px;border-left:5px solid #66FFB3;margin-top:10px;margin-bottom:10px;}
 
 .navbar-custom {
   position: absolute;
@@ -483,6 +483,10 @@ form .row:first-child .floating-label-form-group {
   color: white;
 }
 
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: none;
+}
+
 .btn-primary {
   background-color: var(--color-1);
   color: var(--color-2);
@@ -820,6 +824,10 @@ hr {
   margin-bottom: 0;
 }
 
+.project-section figure {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 .navbar-default .navbar-nav>li>a {
   color: white;

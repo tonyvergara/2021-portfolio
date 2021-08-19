@@ -4,6 +4,8 @@
 
 
 {% block content %}
+<head><title>{{ tag.title }} | Tony Vergara</title></head>
+
 <header class='intro-header color-4' style="background-image: url('{{tag.hero_image.url}}')">
   <div class='container'>
     <div class='row'>
@@ -25,21 +27,23 @@
 
 <div class='container'>
   <div class='row'>
-    <div class='col-lg-8 col-md-10'>
+    <div class="accordion" id="accordionExample" style="width:100%">
       {% for skill in tag.skills %}
-        <div>
-          {% if tag.slug == "workshops" %}
-          <a href="/workshops/{{skill.slug}}">
-          {% endif %}  
-          <h2 class='post-title'>{{ skill.title }}</h2>
-          {% if skill.description %}
-          <p>{{ skill.description|markdownify|safe }}</p>
-          {% endif %}
-          {% if tag.slug == "workshops" %}
-          </a>
-          {% endif %}
+      <div class="">
+        <div class="card-header" id="heading{{forloop.counter0}}">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter0}}" aria-expanded="true" aria-controls="collapse{{forloop.counter0}}">
+              {{skill.title}}
+            </button>
+          </h2>
         </div>
-        <hr />
+
+        <div id="collapse{{forloop.counter0}}" class="collapse" aria-labelledby="heading{{forloop.counter0}}" data-parent="#accordionExample">
+          <div class="card-body">
+            {{skill.description|markdownify}}
+          </div>
+        </div>
+      </div>
       {% endfor %}
     </div>
   </div>

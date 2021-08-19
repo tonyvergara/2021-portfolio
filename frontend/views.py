@@ -15,8 +15,6 @@ def home(request):
             {'content_type': 'blogPost', 'include': 3, 'limit': 4}
         ),'projects': client.entries(
             {'content_type': 'project', 'include': 3, 'limit': 4}
-        ),'testimonials': client.entries(
-            {'content_type': 'testimonial', 'include': 3, 'limit': 6}
         ),'categories': client.entries(
             {'content_type': 'category', 'include': 3}
         ),'global_files': global_files,
@@ -25,8 +23,7 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html', {
-        'person': client.entry('4oem3H3VM1DMnC4Vq8fqAS'),'blogs': client.entries({'content_type': 'blogPost','fields.author.sys.id': '4oem3H3VM1DMnC4Vq8fqAS'}),'recognition': client.entries({'content_type': 'recognition', 'include': 3}),'global_files': global_files
-    })
+        'person': client.entry('4oem3H3VM1DMnC4Vq8fqAS'),'blogs': client.entries({'content_type': 'blogPost','fields.author.sys.id': '4oem3H3VM1DMnC4Vq8fqAS'}),'recognition': client.entries({'content_type': 'recognition', 'include': 3}),'testimonials': client.entries({'content_type': 'testimonial', 'include': 3, 'limit': 6}),'global_files': global_files})
 
 def blogs(request):
     return render(request, 'blog.html', {
