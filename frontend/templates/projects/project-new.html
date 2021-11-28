@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<title>{{ project.project_title }} | Tony Vergara</title>
+
+<section id="hero" style="background-image: url('{% static 'images/home-bg.png' %}');">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+          <div>
+            <h1>{{ project.project_title }}</h1>
+            <h2>{{project.description}}</h2>
+            <div class='hero-cta'>
+              <a class="btn btn-primary btn-lg" href="/projects" role="button">See Our Work</a>
+              <a class="btn btn-link btn-lg" href="#footer" role="button"><span class="btn-copy btn-link">Get In Touch</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+          <img src="{% static 'images/home-fg.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+<!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <!--<div class="section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>-->
+
+        <div class="row">
+          <div class="col-md-4 col-lg-8 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+            <div class="icon-box icon-box-{{ forloop.counter }} mb-4">
+              <div class="icon">
+                <img class='icon category-icon' src="{{category.icon.url}}">
+              </div>
+              <h6>PROJECT DURATION</h6>
+              <h4 class="title">Lorem ipsum dolor sit amet consectetur.</a></h4>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-8 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+            <div class="icon-box icon-box-{{ forloop.counter }} mb-4">
+              <div class="icon">
+                <img class='icon category-icon' src="{{category.icon.url}}">
+              </div>
+              <h6>MY ROLE</h6>
+              <h4 class="title">In this project with R2i, I served as the client liaison and user experience lead, managing discovery and onboarding sessions for the rest of the team.</h4>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-8 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+            <div class="icon-box icon-box-{{ forloop.counter }} mb-4">
+              <div class="icon">
+                <img class='icon category-icon' src="{{category.icon.url}}">
+              </div>
+              <h6>LOREM IPSUM</h6>
+              <h4 class="title">Lorem ipsum dolor sit amet consectetur.</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+  {% endblock %}

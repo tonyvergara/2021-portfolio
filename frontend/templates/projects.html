@@ -3,22 +3,18 @@
 
 {% block content %}
 <title>Projects | Tony Vergara</title>
-<header class='intro-header' style="background-image: url('{% static "images/home-bg.jpg" %}')">
-  <div class='container'>
-    <div class='row'>
-      <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-        <div class='site-heading'>
-          <h1>Projects</h1>
-          <hr class='small' />
-          
-      </div>
-    </div>
-  </div>
-</header>
-<div class='container'>
-  
-  <div class='row'>
-    <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+<!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs" style="background: linear-gradient(135deg, rgba(147,253,222,1) 50%, rgba(32,233,207,1) 100%);">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Projects</li>
+        </ol>
+        <h2>Projects</h2>
+        <p>Lorem ipsum about how my Projects can range in size from single one-off engagements to longer term consultative work.</p>
+        <div class='row'>
+    <div class='col-lg-8 col-md-10'>
       <div>
         <form action="" method="post">
           {% csrf_token %}
@@ -27,19 +23,19 @@
         </form>
       </div>
     </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+<div class='container my-4'>
+  
+  
       <div class="container cards">
-        <h2>Lorem ipsum about how my Projects can range in size from single one-off engagements to longer term consultative work.</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing sed quallam nulla eunque fortis bellaro</p>
+        {% if projects|length == 0 %}
+        <h2>We couldn't find any projects with that search term. </h2>
+        <p>Please try another term or contact us for more information.</p>
+        {% endif %}
         <div class='row'>
           {% for project in projects %}
-          <div class="card-container col-lg-4 col-md-6 col-sm-12">
-            <a href='/projects/{{project.slug}}'>
-              <div class="card color-primary project-card">
-                <div class="card-img"  style='max-height:200px;overflow:hidden;'><img style='width:100%' src='{{project.hero_image.url}}'></div>
-                <div class="card-body"><h3>{{project.project_title}}</h3><hr style="margin-left: 0;" class="small"><p>{{project.description}}</p></div>
-              </div>
-            </a>
-          </div>
+          {% include "components/project-card.html" %}
           {% endfor %}
         </div>
       </div>

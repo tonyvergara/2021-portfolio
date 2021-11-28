@@ -1,0 +1,786 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;0,900;1,200;1,400;1,900&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
+	<!--<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">-->
+	<!--<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;700&family=Yantramanav:wght@100;300;700&display=swap" rel="stylesheet">-->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    	var grey = ['ffffff','fefefe','fdfdfd','fafafa','f7f7f7','f1f1f1','e8e8e8','d4d4d4','a7a7a7','606060','232323']
+    	
+    	var green = ['fdffeb','f5febe','e7fd93','d6fb6c','c3f74c','b1f233','9fe920','8bd711','6aad07','406b02','1e3300']
+    	var turquoise = ['ebfff7','befee7','93fdde','6cfbd9','4cf7d6','33f2d4','20e9cf','11d7c1','07ad9d','026b62','00332f']
+    	var purple = ['ecebff','c7befe','a993fd','916cfb','804cf7','7433f2','6a20e9','5e11d7','4a07ad','2d026b','150033']
+    	var pink = ['ffebf3','febed5','fd93b2','fb6c8e','f74c6e','f23351','e9203a','d71128','ad0717','6b020b','330004']
+    	
+    	var colors = [purple[6],turquoise[9],turquoise[1],grey[10],purple[1],green[2],turquoise[1],pink[1],grey[6],turquoise[9],pink[1],purple[9],purple[5],turquoise[10],'ffffff','ffffff',purple[9]]
+    	var text_color = [grey[0],grey[0],grey[10],grey[0],grey[10],grey[10],grey[10],grey[10],grey[10],turquoise[1],pink[9],grey[0],grey[0],grey[0],'000000','000000',turquoise[9]]
+    	var spacing = ['4px','8px','16px','32px','48px','64px']
+
+    </script>
+    <script src="https://kit.fontawesome.com/4e0b58941c.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		:root {
+
+			--text-light: #f8f8f8;
+			--text-dark: #232323;
+
+			--primary-font: 'Mulish', sans-serif;
+			--secondary-font: 'Noto Serif', serif;
+			--gradient-angle: 135deg;
+		}
+		p, figcaption, li {
+			font-family: var(--primary-font);
+			font-weight: 400;
+		}
+		h1 {
+			font-family: var(--primary-font);
+			font-size:48px;
+			margin-top: 1rem;
+			font-weight: 200;
+		}
+		h2 {
+			font-family: var(--secondary-font);
+			font-size:36px;
+			font-weight: 400;
+			padding-top: var(--spacing-3);
+			padding-bottom: var(--spacing-2);
+		}
+		h3 {
+			font-family: var(--primary-font);
+			font-size: 30px;
+			font-weight: 400;
+			padding-top: var(--spacing-3);
+			padding-bottom: var(--spacing-2);
+		}
+		h4 {
+			font-family: var(--primary-font);
+			font-size: 24px;
+			font-weight: 400;
+			padding-top: var(--spacing-2);
+			padding-bottom: var(--spacing-1);
+		}
+		h5 {
+			font-family: var(--secondary-font);
+			font-size: 20px;
+			font-weight: 700;
+			padding-top: var(--spacing-2);
+			padding-bottom: var(--spacing-1);
+
+		}
+		h6 {
+			font-family: var(--primary-font);
+			text-transform:uppercase;
+			font-weight:900;
+			font-size: 16px;
+			letter-spacing: -.3;
+			font-style: italic;
+			padding-top: var(--spacing-2);
+			padding-bottom: var(--spacing-1);
+		}
+		p {
+			font-size: 16px;
+		}
+		figcaption {
+			font-size:14px;
+			color:#353535;
+		}
+		blockquote {
+			background-color: var(--color-2);
+			color: var(--text-2);
+			padding: var(--spacing-4);
+		}
+		blockquote:before {
+			content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTMgMTQuNzI1YzAtNS4xNDEgMy44OTItMTAuNTE5IDEwLTExLjcyNWwuOTg0IDIuMTI2Yy0yLjIxNS44MzUtNC4xNjMgMy43NDItNC4zOCA1Ljc0NiAyLjQ5MS4zOTIgNC4zOTYgMi41NDcgNC4zOTYgNS4xNDkgMCAzLjE4Mi0yLjU4NCA0Ljk3OS01LjE5OSA0Ljk3OS0zLjAxNSAwLTUuODAxLTIuMzA1LTUuODAxLTYuMjc1em0tMTMgMGMwLTUuMTQxIDMuODkyLTEwLjUxOSAxMC0xMS43MjVsLjk4NCAyLjEyNmMtMi4yMTUuODM1LTQuMTYzIDMuNzQyLTQuMzggNS43NDYgMi40OTEuMzkyIDQuMzk2IDIuNTQ3IDQuMzk2IDUuMTQ5IDAgMy4xODItMi41ODQgNC45NzktNS4xOTkgNC45NzktMy4wMTUgMC01LjgwMS0yLjMwNS01LjgwMS02LjI3NXoiLz48L3N2Zz4=);
+			color: #ff0000;
+			display: inline;
+			height: 30px;
+			width: 30px;
+			padding-right: var(--spacing-3);
+		}
+		
+		.superscript, blockquote a {
+			color: var(--color-0);
+			font-weight: 700;
+		}
+		.superscript:hover, blockquote a:hover {
+			color: var(--color-16);
+		}
+		.color {
+			width: 250px;
+			height: 250px;
+			background-color: #000;
+			margin-right:10px;
+			margin-bottom:10px;
+			overflow: hidden;
+			position:relative;
+		}
+		.card-bg {
+			position:absolute;
+			height:100%;
+			width:100%;
+			z-index:998;
+			background-color: white;
+		}
+		.card-content {
+			z-index:999;
+			position:absolute;
+			padding:10px;
+			color: white;
+			font-family: var(--primary-font);
+		}
+		.bg-img > .card-bg {
+			background-image: url('https://images.unsplash.com/photo-1620942330127-41f1f787d10f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1901&q=80');
+			background-size: cover;
+			z
+		}
+		.card-bg:before {
+		  	content: "";
+		  	position: absolute;
+		 	left: 0; right: 0;
+			top: 0; bottom: 0;
+			opacity:1;
+		}
+		.gradient-4 > .card-bg:before {
+		  	background: linear-gradient(var(--gradient-angle), var(--color-6) 0%, var(--color-0));
+		}
+		.gradient-3> .card-bg:before {
+		  	background: linear-gradient(var(--gradient-angle), var(--color-5) 0%, var(--color-0));
+		}
+		.gradient-1> .card-bg:before {
+		  	background: linear-gradient(var(--gradient-angle), var(--color-3) 0%, var(--color-0));
+		}
+		.gradient-2> .card-bg:before {
+		  	background: linear-gradient(var(--gradient-angle), var(--color-4) 0%, var(--color-0));
+		}
+
+		.colors {
+			display:inline-flex;
+			flex-wrap: wrap;
+
+		}
+		
+		.color-0  > .card-bg:before {
+			background-color: var(--color-0);
+			color: white;
+		}
+		.color-1  > .card-bg:before {
+			background: var(--color-1);
+		}
+		
+		.color-2  > .card-bg:before {
+			background-color: var(--color-2);
+		}
+		.color-0-inv  > .card-bg:before {
+			background-color: var(--text-0);
+		}
+		.color-1-inv  > .card-bg:before {
+			background: var(--text-1);
+		}
+		
+		.color-2-inv  > .card-bg:before {
+			background-color: var(--text-2);
+		}
+		.color-3  > .card-bg:before  {
+			background-color: var(--color-3);
+		}
+		.color-4  > .card-bg:before  {
+			background-color: var(--color-4);
+		}
+		.color-5  > .card-bg:before  {
+			background-color: var(--color-5);
+		}
+		.color-6  > .card-bg:before {
+			background-color: var(--color-6);
+		}
+		.color-7  > .card-bg:before {
+			background-color: var(--color-7);
+		}
+		.color-8  > .card-bg:before {
+			background-color: var(--color-8);
+		}
+		.color-9  > .card-bg:before {
+			background-color: var(--color-9);
+		}
+		.color-10  > .card-bg:before {
+			background-color: var(--color-10);
+		}
+		.color-11  > .card-bg:before {
+			background-color: var(--color-11);
+		}
+		.color-12  > .card-bg:before {
+			background-color: var(--color-12);
+		}
+		.color-13  > .card-bg:before {
+			background-color: var(--color-13);
+		}
+		.color-14  > .card-bg:before {
+			background-color: var(--color-14);
+		}
+		.bg-img  > .card-bg:before {
+			opacity: .7;
+		}
+		.btn {
+			font-family: var(--primary-font),sans-serif;
+		}
+		.btn {
+			line-height: 42px;
+			padding: 0 23px;
+			font-weight: 700;
+		}
+		.btn-primary {
+			background-color: var(--color-0);
+			color: white;
+			border: 1px solid var(--color-0);
+		}
+		.btn-primary:hover {
+			background-color: var(--color-16);
+		}
+
+		.btn-secondary, .btn-secondary:hover  {
+			background-color: transparent;
+			color: var(--color-0);
+			border-color: var(--color-0);
+			box-sizing: border-box;
+			font-weight: 700;
+			transition: .125s;
+		}
+		.btn-secondary:hover {
+			color: var(--text-0);
+			background-color: var(--color-16);
+			border-color: var(--color-16);
+			transition: .125s;
+		}
+		.btn-link {
+			text-decoration: underline;
+			font-weight: 700;
+			color: var(--color-0);
+		}
+		.btn-link:hover {
+			color: var(--color-16);
+		}
+		.text-black, .text-black > * {
+			color: #4d4d4d;
+		}
+		.card {
+			border-radius: 0;
+			border: 2px solid var(--color-2);
+		}
+		.text-0 {
+			color: var(--text-0);
+		}
+		.text-0-alt {
+			color: var(--color-0);
+		}
+		.text-1 {
+			color: var(--text-1);
+		}
+		.text-1-alt {
+			color: var(--color-1);
+		}
+		.text-2 {
+			color: var(--text-2);
+		}
+		.text-2-alt {
+			color: var(--color-2);
+		}
+		.text-3 {
+			color: var(--text-3);
+		}
+		.text-4 {
+			color: var(--text-4);
+		}
+		.text-5 {
+			color: var(--text-5);
+		}
+		.text-6 {
+			color: var(--text-6);
+		}
+		.text-7 {
+			color: var(--text-7);
+		}
+		.text-8 {
+			color: var(--text-8);
+		}
+		.text-9 {
+			color: var(--text-9);
+		}
+		.text-10 {
+			color: var(--text-10);
+		}
+		.text-11 {
+			color: var(--text-11);
+		}
+		.text-12 {
+			color: var(--text-12);
+		}
+		.text-13 {
+			color: var(--text-13);
+		}
+		.text-14 {
+			color: var(--text-14);
+		}
+		hr {
+			height: 1px;
+			background: linear-gradient(90deg,var(--color-0),var(--color-1));
+		}
+	</style>
+	
+</head>
+<body>
+	<div class='container'>
+		<h1>Brand Guide</h1>
+		<h2>Vergara Creative Labs</h2>
+		<blockquote class="">
+			<p>This visual guide has been created to display the compliance with WCAG accessibility standards for color contrast. To check the colors yourself, you can use this link: <a href='https://webaim.org/resources/contrastchecker/'>https://webaim.org/resources/contrastchecker/</a></p>
+			<p>Color contrast is the difference in light between font (or anything in the foreground) and its background. In web accessibility, how well one color stands out from another color determines whether or not most people will be able to read the information.<a href="https://www.boia.org/blog/what-is-color-contrast"><span class="superscript">[1]</span></a></p>
+			<p>WCAG 2.0 level AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text. WCAG 2.1 requires a contrast ratio of at least 3:1 for graphics and user interface components (such as form input borders). WCAG Level AAA requires a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text.</p>
+			<p>Large text is defined as 14 point (typically 18.66px) and bold or larger, or 18 point (typically 24px) or larger.<a href="https://webaim.org/resources/contrastchecker/"><span class="superscript">[2]</span></a></p>
+			<button class="btn btn-primary" style="margin-right: 20px;"><span class="btn-copy" style="">Read about Color Contrast</span></button>
+			<button class="btn btn-secondary" style="margin-right: 20px;"><span class="btn-copy" style="">Check other Colors</span></button>
+		</blockquote>
+		<hr>
+		
+		
+		<h2>Colors</h2>
+		<!-- <div id="colors"><div class='color color-0' id='color-0'><div class="card-bg"></div><div class="card-content text-0"><div><script type="text/javascript">document.write('#'+colors[0])</script></div><h3>I smell like beef</h3><div class="mypanel0"></div></div></div></div> -->
+
+
+		<div class="colors">
+			<div class='color color-0' id='color-0'><div class="card-bg"></div><div class="card-content text-0"><div><script type="text/javascript">document.write('#'+colors[0])</script></div><h3>I smell like beef</h3><div class="mypanel0"></div></div></div>
+			<div class='color color-1' id='color-1'><div class="card-bg"></div><div class="card-content text-1"><div><script type="text/javascript">document.write('#'+colors[1])</script></div><h3>I smell like beef</h3><div class="mypanel1"></div></div></div>
+			<div class='color color-2' id='color-2'><div class="card-bg"></div><div class="card-content text-2"><div><script type="text/javascript">document.write('#'+colors[2])</script></div><h3>I smell like beef</h3><div class="mypanel2"></div></div></div>
+			
+			
+
+		<!-- </div>
+		<h4>As Text</h4>
+		<div class="colors">
+			<div class='color color-0-inv'><div class="card-bg"></div><div class="card-content text-0-alt"><div><script type="text/javascript">document.write('#'+colors[0])</script></div><h3>I smell like beef</h3><div class="mypanel0a"></div></div></div>
+			<div class='color color-1-inv'><div class="card-bg"></div><div class="card-content text-1-alt"><div><script type="text/javascript">document.write('#'+colors[1])</script></div><h3>I smell like beef</h3><div class="mypanel1a"></div></div></div>
+			<div class='color color-2-inv'><div class="card-bg"></div><div class="card-content text-2-alt"><div><script type="text/javascript">document.write('#'+colors[2])</script></div><h3>I smell like beef</h3><div class="mypanel2a"></div></div></div>
+		</div>
+		<h3>Secondary/Accent Colors</h3>
+		<div class="colors"> -->
+			<div class='color color-3' id='color-3'><div class="card-bg"></div><div class="card-content text-3"><div><script type="text/javascript">document.write('#'+colors[3])</script></div><h3>I smell like beef</h3><div class="mypanel3"></div></div></div>
+			<div class='color color-4' id='color-4'><div class="card-bg"></div><div class="card-content text-4"><div><script type="text/javascript">document.write('#'+colors[4])</script></div><h3>I smell like beef</h3><div class="mypanel4"></div></div></div>
+			<div class='color color-5' id='color-5'><div class="card-bg"></div><div class="card-content text-5"><div><script type="text/javascript">document.write('#'+colors[5])</script></div><h3>I smell like beef</h3><div class="mypanel5"></div></div></div>
+			<div class='color color-6' id='color-6'><div class="card-bg"></div><div class="card-content text-6"><div><script type="text/javascript">document.write('#'+colors[6])</script></div><h3>I smell like beef</h3><div class="mypanel6"></div></div></div>
+			<div class='color color-7' id='color-7'><div class="card-bg"></div><div class="card-content text-7"><div><script type="text/javascript">document.write('#'+colors[7])</script></div><h3>I smell like beef</h3><div class="mypanel7"></div></div></div>
+		<!-- </div>
+		<h3>Neutral Shades</h3>
+		<div class="colors"> -->
+			<div class='color color-8' id='color-8'><div class="card-bg"></div><div class="card-content text-8"><div><script type="text/javascript">document.write('#'+colors[8])</script></div><h3>I smell like beef</h3><div class="mypanel8"></div></div></div>
+			<div class='color color-9' id='color-9'><div class="card-bg"></div><div class="card-content text-9"><div><script type="text/javascript">document.write('#'+colors[9])</script></div><h3>I smell like beef</h3><div class="mypanel9"></div></div></div>
+			<div class='color color-10' id='color-10'><div class="card-bg"></div><div class="card-content text-10"><div><script type="text/javascript">document.write('#'+colors[10])</script></div><h3>I smell like beef</h3><div class="mypanel10"></div></div></div>
+			
+		<!-- </div>
+		<h3>Alternate Background Colors</h3>
+		<div class="colors"> -->
+			<div class='color color-11' id='color-11'><div class="card-bg"></div><div class="card-content text-11"><div><script type="text/javascript">document.write('#'+colors[11])</script></div><h3>I smell like beef</h3><div class="mypanel11"></div></div></div>
+			<div class='color color-12' id='color-12'><div class="card-bg"></div><div class="card-content text-12"><div><script type="text/javascript">document.write('#'+colors[12])</script></div><h3>I smell like beef</h3><div class="mypanel12"></div></div></div>
+			<div class='color color-13' id='color-13'><div class="card-bg"></div><div class="card-content text-13"><div><script type="text/javascript">document.write('#'+colors[13])</script></div><h3>I smell like beef</h3><div class="mypanel13"></div></div></div>
+			<div class='color color-14' id='color-14'><div class="card-bg"></div><div class="card-content text-14"><div><script type="text/javascript">document.write('#'+colors[14])</script></div><h3>I smell like beef</h3><div class="mypanel14"></div></div></div>
+		</div>
+		<h3>Inherited from NORC Brand</h3>
+		<div class="colors">
+			<div class='color color-15'><div class="card-bg"></div><div class="card-content text-15"><div><script type="text/javascript">document.write('#'+colors[15])</script></div><h3>I smell like beef</h3><div class="mypanel15"></div></div></div>
+		</div>
+		<hr>
+		<h2>Text Styles</h2>
+		<p>These are the text styles you should use across the site content to keep a strong, consistent visual hierarchy for the content and optimize for SEO.</p>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Heading Style</th>
+		      <th scope="col">In Use</th>
+		      <th scope="col">Notes</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th scope="row"><h1>Heading 1</h1></th>
+		      <td><h1>WELCOME TO THE MCBS! Lorem ipsum dolor sit</h1><p>Lorem ipsum dolor sit amet</p></td>
+		      <td>Keep your h1s for your page titles and not much else on the page. Keep them short as well. They're the largest thing on the page, and shouldn't take up the whole screen. Maybe 40 characters max?? Likely in Title Case to Show More </td>
+		    </tr>
+		    <tr>
+		      <th scope="row"><h2>Heading 2</h2></th>
+		      <td><h2>Lorem ipsum dolor sit amet</h2><p>Lorem ipsum dolor sit amet</p></td>
+		      <td>Commonly used for subheadings, section titles, and high level content groupings.</td>
+		    </tr>
+		    <tr>
+		      <th scope="row"><h3>Heading 3</h3></th>
+		      <td><h3>Lorem ipsum dolor sit amet</h3><p>Lorem ipsum dolor sit amet</p></td>
+		      <td>Any notes?</td>
+		    </tr>
+		    <tr>
+		      <th scope="row"><h4>Heading 4</h4></th>
+		      <td><h4>Lorem ipsum dolor sit amet</h4><p>Lorem ipsum dolor sit amet</p></td>
+		      <td>Any notes?</td>
+		    </tr>
+		    <tr>
+		      <th scope="row"><h5>Heading 5</h5></th>
+		      <td><h5>Lorem ipsum dolor sit amet</h5><p>Lorem ipsum dolor sit amet</p></td>
+		      <td>Any notes?</td>
+		    </tr>
+		    <tr>
+		      <th scope="row"><h6>Heading 6</h6></th>
+		      <td><h6>Lorem ipsum dolor sit amet</h6><p>Lorem ipsum dolor sit amet</p></td>
+		      <td>Any notes?</td>
+		    </tr>
+		    <tr>
+		      <th scope="row"><p>Paragraph style for longer form text</p></th>
+		      <td><p>Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet</p></td>
+		      <td>Recommended to keep this to a maximum of 90 characters per line; even more recommended to keep it within 70, if possible.</td>
+		    </tr>
+		    <tr>
+		      <th scope="row"><figcaption>Image Caption</figcaption></th>
+		      <td><figure><img src="../images/home-fg.PNG" style="height:100px"><figcaption>An image we made for a recent teambuilding challenge at R2i.</figcaption></figure></td>
+		      <td>Any notes? Particularly around caption length?</td>
+		    </tr>
+		  </tbody>
+		</table>
+		<div class="col-lg-8">
+			<h1>Heading 1 ##px</h1>
+			<h2>Heading 2 ##px</h2>
+			<h3>Heading 3 ##px</h3>
+			<h4>Heading 4 ##px</h4>
+			<h5>Heading 5 ##px</h5>
+			<h6>Heading 6 ##px</h6>
+			<p>Paragraph Mauris quis tellus in odio dapibus eleifend non at metus. Nullam semper, ipsum at sodales mattis, metus tellus gravida diam, nec iaculis tellus nisi sed.</p>
+			<br>
+			<span class="subhead">Subhead Praesent pellentesque blandit quam suscipit tincidunt. Vivamus lobortis sem eget odio varius egestas. Maecenas tincidunt, ex sed volutpat faucibus, nisl orci aliquam justo, in tristique.</span>
+			<br>
+			<figcaption>Image Caption Suspendisse id aliquet ex, et suscipit libero. Cras consequat eu metus in lobortis. Quisque pulvinar ultrices nisl in molestie. Vestibulum elementum felis in fermentum sodales.</figcaption>
+			<h3>Text Samples</h3>
+			<div class="card px-4 py-2">
+		        <h1>Chesapeake Employers</h1>
+		        <h6>Website Redesign Strategy</h6>
+		        <hr>
+		        <h2>Quick UX Fixes </h2>
+		        <p>We sought to identify some quick wins we could implement on the site to make the site initially more usable while we implemented our VOC program. These ideas came from:</p>
+				<ul>
+					<li>Usability Audit</li>
+					<li>Website feedback from the form</li>
+					<li>Informal surveying during events</li>
+				</ul>
+				<h3>Some of the fixes implemented were:</h3>
+				<h4>Navigation</h4>
+				<ul>
+					<li>Megamenu styles</li>
+					<li>Secondary navigation for locations</li>
+					<li>Menu "how can we help?"</li>
+				</ul>
+				<h4>Homepage</h4>
+				<ul>
+					<div>
+						<h5>Logo</h5>
+						<p>Cras consequat eu metus in lobortis. Quisque pulvinar ultrices nisl in molestie. Vestibulum elementum felis in fermentum sodales.</p>
+					</div>
+					<div>
+						<h5>Layout Fixes</h5>
+						<p>Cras consequat eu metus in lobortis. Quisque pulvinar ultrices nisl in molestie. Vestibulum elementum felis in fermentum sodales.</p>
+					</div>
+				</ul>
+				<h4>Forms</h4>
+				<ul>
+					<li>Logo</li>
+					<li>Layout Fixes</li>
+					<li>Content Wording on key pages</li>
+				</ul>
+		      </div>
+		</div>
+		<h2>Buttons</h2>
+		<div>
+			<button class="btn btn-primary" style="margin-right: 20px;"><span class="btn-copy" style="">Button Option 1</span></button><p>Use the dark turquoise over lighter background colors to give visual contrast for the button style against the background. Use a dark enough turquoise so that white text fits well over the button.</p>
+			<br>
+			<button class="btn btn-secondary" style="margin-right: 20px;"><span class="btn-copy" style="">Button Option 4</span></button><p>Use the dark turquoise as both the button outline and the text color, and transparent for the button fill. Put this button style over a background color that is light enough that both draw enough visual attention through contrast, but not enough to distract from the primary CTA.</p>
+			<br>
+			<button class="btn btn-link"><span class="btn-copy" style="">Link Button for longer calls to action</span></button>
+			<p>We also recommend using a text link style for any longer calls to action to make sure the information seems clickable. We've added an arrow style after the link text to ensure that it is clear that the element is clickable.</p>
+		</div>
+
+		
+		<hr>
+		<script>
+	        var r = document.querySelector(':root');
+	        var mypanel2 = ".mypanel2"
+	        
+	        for (let i = 0; i < spacing.length; i++) {
+	        	var spacerSelect = '--spacing-'+i;
+			  	r.style.setProperty(spacerSelect, spacing[i]);
+	        }
+
+	        for (let i = 0; i < colors.length; i++) {
+			  var colorSelect = '--color-'+i;
+			  r.style.setProperty(colorSelect, '#'+colors[i]);
+
+			  var textSelect = '--text_color-'+i;
+			  var text_i = '--text-'+i;
+			  r.style.setProperty(textSelect, '#'+text_color[i]);
+			  r.style.setProperty(text_i, '#'+text_color[i]);
+			}
+
+	        var url0 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[0]+'&bcolor='+text_color[0]+'&api';
+	        $.getJSON(url0, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel0").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-0');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-0');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url1 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[1]+'&bcolor='+text_color[1]+'&api';
+	        $.getJSON(url1, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel1").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-1');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-1');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url2 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[2]+'&bcolor='+text_color[2]+'&api';
+	        $.getJSON(url2, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel2").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-2');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-2');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url3 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[3]+'&bcolor='+text_color[3]+'&api';
+	        $.getJSON(url3, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel3").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-3');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-3');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url4 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[4]+'&bcolor='+text_color[4]+'&api';
+	        $.getJSON(url4, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel4").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-4');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-4');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url5 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[5]+'&bcolor='+text_color[5]+'&api';
+	        $.getJSON(url5, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel5").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-5');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-5');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url6 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[6]+'&bcolor='+text_color[6]+'&api';
+	        $.getJSON(url6, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel6").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-6');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-6');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+	        var url7 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[7]+'&bcolor='+text_color[7]+'&api';
+	        $.getJSON(url7, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel7").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-7');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-7');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url8 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[8]+'&bcolor='+text_color[8]+'&api';
+	        $.getJSON(url8, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel8").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-8');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-8');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url9 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[9]+'&bcolor='+text_color[9]+'&api';
+	        $.getJSON(url9, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel9").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-9');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-9');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url10 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[10]+'&bcolor='+text_color[10]+'&api';
+	        $.getJSON(url10, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel10").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-10');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-10');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url11 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[11]+'&bcolor='+text_color[11]+'&api';
+	        $.getJSON(url11, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel11").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-11');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-11');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url12 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[12]+'&bcolor='+text_color[12]+'&api';
+	        $.getJSON(url12, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel12").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-12');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-12');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url13 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[13]+'&bcolor='+text_color[13]+'&api';
+	        $.getJSON(url13, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel13").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-13');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-13');
+	  				boxCheck.style.border = "thick solid #FF0000";
+				}
+		    });
+		    var url14 = 'https://webaim.org/resources/contrastchecker/?fcolor='+colors[14]+'&bcolor='+text_color[14]+'&api';
+	        $.getJSON(url14, function(data) {
+		        var largeCheck = `${data.AALarge}`;
+		        var regCheck = `${data.AA}`;
+		        var text = `Ratio: ${data.ratio}<br>
+		                    AA Compliant?: ${data.AA}<br>
+		                    AA Big Text?: ${data.AALarge}`
+		        $(".mypanel14").html(text);
+		        if (regCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-14');
+	  				boxCheck.style.border = "2px solid #FF0000";
+				}
+		        if (largeCheck == 'fail') {
+	  				var boxCheck = document.getElementById('color-14');
+	  				boxCheck.style.border = "6px solid #FF0000";
+				}
+		    });
+	    </script>
+</body>
+</html>

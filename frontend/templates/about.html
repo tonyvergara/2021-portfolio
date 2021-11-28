@@ -5,33 +5,27 @@
 
 {% block content %}
 <head><title>About Tony Vergara</title></head>
+<section id="hero" style="background-image: url('{% static 'images/home-bg.png' %}');">
 
-<header class='intro-header'>
-  <div class='container'>
-    <div class='row'>
-      <div class='col-md-6'>
-        <div class='site-heading text-left'>
-          <h1>About {{person.name}}</h1>
-          <hr class='small' />
-          <span class='subheading'>{{person.title}}</span>
-          <span class='subheading'>{{person.company}}</span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+          <div>
+            <h1>About {{person.name}}</h1>
+            <h2>{{person.title}}</h2>
+            <div class='hero-cta'>
+              <blockquote>{{person.short_bio}}</blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+          <img src="{{person.image.url}}" class="img-fluid" alt="">
+        </div>
       </div>
     </div>
-    <div class='col-md-6'>
-      <div class='bio-pic'>
-        <img style="width: 100%;" src="{{person.image.url}}">
-      </div>
-    </div>
-    
-  </div>
-</header>
-<div class='container color-2'>
-  <div class='row'>
-    <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-      <h2 class='subheading'>{{person.short_bio}}</h2>
-    </div>
-  </div>
-</div>
+
+  </section><!-- End Hero -->
+
 <div class='container'>
   <div class='row'>
     <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
@@ -39,43 +33,83 @@
     </div>
   </div>
 </div>
-<div class="color-3 container cards">
-  <h2>Certifications and Awards</h2>
-  <div class='row'>
-    {% for item in recognition %}
-    <div class="card-container col-md-4">
-      <div class="">
-        <div class="card-img" style="text-align:center;"><img style="width:40%" src="{{item.image.url}}"></div>
-        <div class="card-body"><span class="h6">{{item.type}}</span><h3>{{item.title}}</h3></div>
+<section id="blog" class="blog">
+      <div>
+        <div class='container'>
+          <div class='row'>
+            <div class="col-lg-4 mb-4" data-aos="fade-right">
+              <h2 class="">Certifications and Awards</h2>
+              <p>We're constantly looking to improve our ability to deliver results. Here are some of our recent accomplishments.</p>
+            </div>
+            
+            <div class='col-lg-8'>
+              {% for item in recognition %}
+                <div class="blog-card mb-3" data-aos="fade-up">
+                  <div class="row no-gutters">
+                    <div class="col-sm-2">
+                      <img src="{{item.image.url}}" class="card-img">
+                    </div>
+                    <div class="col-sm-10">
+                      <div class="card-body">
+                        <span class="h6">{{item.type}}</span>
+                        <h3>{{item.title}}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--<div class="card-container">
+                    <a href='/blog/{{post.slug}}'>
+                      <div class="card color-primary project-card">
+                        <div class="card-img"></div>
+                        <div class="card-body"><h3>{{post.title}}</h3><p>{{post.description}}</p></div>
+                      </div>
+                    </a>
+                  </div>-->
+              {% endfor %}  
+            </div>
+            
+          </div>
+        </div>
       </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
-<div class="color-4 container cards">
-  <h2>Testimonials</h2>
-  <div class='row'>
-    {% for testimonial in testimonials %}
-    <div class="card-container col-md-4">
-      <div class="card color-primary project-card">
-        <div class="card-img"></div>
-        <div class="card-body"><p>{{testimonial.quote_text}}</p></div>
+    </section>
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Testimonials</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            {% for testimonial in testimonials %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{testimonial.quote_text}}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <h3>First Lastname</h3>
+                <h4>This is a person</h4>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
       </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
+    </section><!-- End Testimonials Section -->
+
 <div class="color-2 container cards">
   <h2>Blog Articles by {{person.name}}</h2>
   <div class='row'>
-    {% for blog in blogs %}
-    <div class="card-container col-md-4">
-      <a href='/blog/{{blog.slug}}'>
-          <div class="card color-primary project-card">
-            <div class="card-img"></div>
-            <div class="card-body"><h3>{{blog.title}}</h3><hr style="margin-left: 0;" class="small"><p>{{blog.description}}</p></div>
-          </div>
-        </a></div>
+    {% for post in blogs %}
+      {% include "components/blog-card.html" %}
     {% endfor %}
   </div>
 </div>

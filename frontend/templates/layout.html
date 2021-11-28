@@ -11,8 +11,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4e0b58941c.js" crossorigin="anonymous"></script>
     {% if request.build_absolute_uri|slice:"7:12" == 'local' %}
+    <!-- Vendor CSS Files -->
+    <link href="{% static '/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static '/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
     <link href="{% static '/stylesheets/bootstrap.min.css' %}" rel="stylesheet" />
-    <link href="{% static '/stylesheets/clean-blog.css' %}" rel="stylesheet" />
+    <link href="{% static '/stylesheets/style.css' %}" rel="stylesheet" />
     {% else %}
     {% for file in global_files.files %} <link href="{{file.url}}" rel="stylesheet" type="text/css" /> {% endfor %}
     
@@ -52,45 +60,53 @@
     ![endif]-->
   </head>
   <body>
-    <nav class='navbar navbar-default navbar-custom navbar-fixed-top'>
-      <div class='container-fluid'>
-        <div class='navbar-header page-scroll' style="width: 100%;">
-          <button style='border:none;'class='navbar-toggle' type="button" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-            <span class='sr-only'>Toggle navigation</span>
-            Menu <i class="fa fa-bars"></i>
-          </button>
-          <a class='navbar-brand' href="/">Tony Vergara</a>
-        </div>
-
-        <div class='collapse navbar-collapse' id="bs-navbar-collapse-1">
-          <ul class='nav navbar-nav navbar-right'>
-            
-            <li>
-              <a class="btn btn-link btn-lg" href="/" role="button"><span class="btn-copy btn-link">Home</span></a>
-            </li>
-            <li>
-              <a class="btn btn-link btn-lg" href="/categories" role="button"><span class="btn-copy btn-link">Skills</span></a>
-            </li>
-            <li>
-              <a class="btn btn-link btn-lg" href="/projects" role="button"><span class="btn-copy btn-link">Projects</span></a>
-            </li>
-            <li>
-              <a class="btn btn-link btn-lg" href="/blog" role="button"><span class="btn-copy btn-link">Blog</span></a>
-            </li>
-            <li>
-              <a class="btn btn-link btn-lg" href="/about" role="button"><span class="btn-copy btn-link">About</span></a>
-            </li>
-          </ul>
+    <header id="header" class="fixed-top align-items-center">
+    <div class="">
+      <div class="utility-nav">
+        <div class="container d-flex flex-row align-items-end">
+          <li class="nav-link"><a class="" href="#footer">Utility Navigation Link</a></li>
         </div>
       </div>
-    </nav>
+      <div class="container d-flex align-items-center">
+          <div class="logo me-auto">
+            <h1><a href="/">Vergara Creative Labs</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+          </div>
+    
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+              <li class="nav-link"><a href="/">Home</a></li>
+              <li class="nav-link"><a href="/about">About</a></li>
+              <li class="nav-link dropdown"><a href="#"><span>Skills</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li class="nav-link"><a class="nav-link" href="/testing-optimization">CX Measurement & Optimization</a></li>
+                  <li class="nav-link"><a href="/ux-research">User Research</a></li>
+                  <li class="nav-link"><a href="/workshops">Design Thinking Workshops</a></li>
+                  <li class="nav-link"><a href="/website-redesign">Website Redesign Strategy</a></li>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-link"><a href="/projects">Projects</a></li>
+              <li class="nav-link"><a href="/blog">Blog</a></li>
+            </ul>
+            <li class="nav-link"><a class="btn btn-primary" href="#footer">Contact</a></li>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+    
+        </div>
+      </div>
+  </header><!-- End Header -->
+
 
     {% block content %}{% endblock %}
-    <footer class="color-1 text-light" id="contact">
-      <div class='container'>
+
+
+    <footer class="bg-dark" id="footer">
+      <div class='container footer-top'>
         <div class='row' style="align-items: center;">
-          <div class='col-md-6 col-sm-12'>
-            <h4>Vergara Creative Labs</h4>
+          <div class='col-md-6 col-sm-12 text-light'>
+            <h4 class="text-light">Vergara Creative Labs</h4>
             <p>We're always available for the right opportunities, so definitely reach out with more information. In addition to the services above, we love mentoring career changing technologists who are looking to break into the field.</p>
             <ul style="padding-left:0;">
               
@@ -159,7 +175,7 @@
           </div>
         </div>
         <div class="">
-          <p class='copyright'>Copyright &copy; Tony Vergara 2021</p>
+          <p class='copyright text-light'>Copyright &copy; Tony Vergara 2021</p>
         </div>
       </div>
     </footer>
@@ -167,7 +183,13 @@
   {% if request.build_absolute_uri|slice:"7:12" == 'local' %}
   <script src="{% static '/javascripts/jquery.min.js' %}"></script>
   <script src="{% static '/javascripts/bootstrap.min.js' %}"></script>
-  <script src="{% static '/javascripts/clean-blog.js' %}"></script>
+  <script src="{% static '/vendor/aos/aos.js' %}"></script>
+  <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static '/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static '/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static '/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static '/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static '/javascripts/main.js' %}"></script>
   {% else %}
   {% for file in global_files.js_files %} 
   <script src="{{file.url}}"></script> 

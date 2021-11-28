@@ -2,36 +2,28 @@
 {% load static %}
 
 {% block content %}
-<header class='intro-header' style="background-image: url('{% static "images/home-bg.jpg" %}')">
-  <div class='container'>
-    <div class='row'>
-      <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-        <div class='site-heading'>
-          <h1>Blog</h1>
-          <hr class='small' />
-          <span class='subheading'>Tony Vergara</span>
-      </div>
-    </div>
-  </div>
-</header>
-<div class='container'>
+
+<!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Blog</li>
+        </ol>
+        <h2>Insights & Takeaways</h2>
+        <p>Here are some quick thoughts of ours around some of our prior work, ideas for future work, and other topics, like buzzwords we hear in the industry.</p>
+    </section><!-- End Breadcrumbs -->
+
+
+<div class='container my-4'>
   <div class='row'>
-    <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
+    <div class='col-lg-8 col-md-12'>
       {% for post in blogs %}
-        <div class='post-preview'>
-          <a href="/blog/{{ post.slug }}">
-            <h2 class='post-title'>{{ post.title }}</h2>
-          </a>
-          {% if post.subtitle %}
-            <p class='post-subtitle'>{{ post.subtitle }}</p>
-          {% endif %}
-          <p class='post-meta'>Written by
-            <a href="#">{{ post.author.name }}</a>
-            on {{ post.publlish_date }}
-          </p>
-        </div>
-        <hr />
+        {% include "components/blog-card.html" %}
       {% endfor %}
+    </div>
+    <div class='col-lg-4 col-md-12'>
     </div>
   </div>
 </div>

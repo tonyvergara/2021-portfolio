@@ -4,30 +4,26 @@
 {% block content %}
 <head><title>{{ blog.title }} | Tony Vergara</title></head>
 
-{% if not blog.hero_image %}
-<header class='intro-header'>
-{% else %}
-<header class='intro-header' style="background-image: url('{{blog.hero_image.url}}')">
-{% endif %}
-  <div class='container'>
-    <div class='row'>
-      <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
-        <div class='post-heading'>
-          <h1>{{ blog.title }}</h1>
-          {% if blog.description %}
-            <h2 class='subheading'>{{ blog.description }}</h2>
-          {% endif %}
-          <span class='meta'>Written by
-            <a href="/about">{{ blog.author.name }}</a>
-            on {{ blog.publish_date|date:"F d, Y" }}
-          </span>
+<section id="hero" style="background-image: url('{{blog.hero_image.url}}')">
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+          <div>
+            <h1>{{ blog.title }}</h1>
+            {% if blog.description %}
+              <h2 class='subheading'>{{ blog.description }}</h2>
+            {% endif %}
+            <span class='meta'>Written by
+              <a href="/about">{{ blog.author.name }}</a>
+              on {{ blog.publish_date|date:"F d, Y" }}
+            </span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+</section>
 
-<article>
+<section><article>
   <div class='container'>
     <div class='row'>
       <div class='col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1'>
@@ -36,6 +32,6 @@
       
     </div>
   </div>
-</article>
+</article></section>
 {% endblock %}
 

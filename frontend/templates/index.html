@@ -2,83 +2,120 @@
 {% load static %}
 
 {% block content %}
+
 <head><title>Tony Vergara | UX Researcher & Strategist</title></head>
-<header class='intro-header' style="background-image: url('{{hero_image.url}}');margin-bottom:0;">
-  <div class='container'>
-    <div class='row'>
-      <div class='col-lg-6 col-md-8'>
-        <div class='site-heading'>
-          <h1>Vergara Creative Labs</h1>
-          <hr class='small' />
-          <span class='subheading'>We're innovators and storytellers who focus on lorem, ipsum, and dolor. We make sit, amet, and consectetur.</span>
-          <div class='hero-cta'>
-            <a class="btn btn-primary btn-lg" href="/projects" role="button">See Our Work</a>
-            <a class="btn btn-link btn-lg" href="#contact" role="button"><span class="btn-copy btn-link">Get In Touch</span></a>
-          </div>
-      </div>
-    </div>
-  </div>
-</header>
-<div class='icon-list'>
-  <div class='container text-center'>
-    <h2 class="section-header">Our Skills</h2>
-    <div class='row'>
-      {% for category in categories %}
-      <div class='col-lg-3 col-xs-6 icon-card'>
-          <a href="{{category.slug}}">
-            <div class='post-preview'>
-              <img class='icon category-icon' src="{{category.icon.url}}" style="filter: invert(82%) sepia(43%) saturate(517%) hue-rotate(86deg) brightness(108%) contrast(102%);">
-              <h3>{{ category.title }}</h3>
+  <section id="hero" style="background-image: url('{% static 'images/img-hero-bg.png' %}');">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+          <div>
+            <h1>Vergara Creative Labs</h1>
+            <h2>We're innovators and storytellers who gain inspiration from psychology and neuroscience to lorem ipsum, dolor sit, amet, and consectetur.</h2>
+            <div class='hero-cta'>
+              <a class="btn btn-primary btn-lg" href="/projects" role="button">See Our Work</a>
+              <a class="btn btn-link btn-lg" href="#footer" role="button"><span class="btn-copy btn-link">Get In Touch</span></a>
             </div>
-          </a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-<div class='color-2'>
-  <div class='container'>
-    <h2 class="section-header">Recent Projects</h2>
-    <div class='row'>
-      {% for project in projects %}
-      <div class="card-container col-md-6">
-        <a href='/projects/{{project.slug}}'>
-          <div class="card color-primary project-card">
-            <div class="card-img" style='max-height:200px;overflow:hidden;'><img style='width:100%' src='{{project.hero_image.url}}'</img></div>
-            <div class="card-body"><h3>{{project.project_title}}</h3><hr style="margin-left: 0;" class="small"><p>{{project.description}}</p></div>
           </div>
-        </a>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+          <img src="{% static 'images/home-fg.png' %}" class="img-fluid" alt="">
+        </div>
       </div>
-      {% endfor %}
     </div>
-    <a class="btn btn-primary btn-lg" href="/projects" role="button">See All Projects</a>
-  </div>
-</div>
-<div class='color-2'>
-  <div class='container'>
-    <div class='row'>
-      <div class="col-lg-4">
-        <h2 class="">Recent Blogs</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing sed quallam nulla eunque fortis.</p>
-        <a class="btn btn-primary btn-lg" href="/blog" role="button">See All Blogs</a>
-      </div>
-      
-      <div class='col-lg-8'>
-        {% for post in blogs %}
-          <div class="card-container">
-              <a href='/blog/{{post.slug}}'>
-                <div class="card color-primary project-card">
-                  <div class="card-img"></div>
-                  <div class="card-body"><h3>{{post.title}}</h3><p>{{post.description}}</p></div>
-                </div>
-              </a>
+
+  </section><!-- End Hero -->
+  <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <!--<div class="section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>-->
+
+        <div class="row">
+          {% for category in categories %}
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+            <div class="icon-box icon-box-{{ forloop.counter }} mb-4">
+              <div class="icon">
+                <img class='icon category-icon' src="{{category.icon.url}}">
+              </div>
+              <h4 class="title"><a href="/{{category.slug}}">{{ category.title }}</a></h4>
             </div>
-        {% endfor %}  
+          </div>
+          {% endfor %}
+        </div>
+
       </div>
-      
-    </div>
-  </div>
-</div>
+    </section><!-- End Services Section -->
+<!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Projects</h2>
+          <p>Our work is wide-ranging, but here's a sample of the most recent projects we've completed for our clients. </p>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+        <!--<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">-->
+          {% for project in projects %}
+          <!--<div class="col-lg-6 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{{project.hero_image.url}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{project.project_title}}</h4>
+                <p>{{project.description}}</p>
+              </div>
+              <div class="portfolio-links">
+                <a href="{{project.hero_image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="/projects/{{project.slug}}" title="Project Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>-->
+            {% include "components/project-card.html" %}
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+    
+    <section id="blog" class="blog" data-aos="fade-up">
+      <div>
+        <div class='container'>
+          <div class='row'>
+            <div class="col-lg-4 mb-4" data-aos="fade-right">
+              <h2 class="">Recent Blogs</h2>
+              <p>Here's the recent thoughts we've shared about our passions.</p>
+              <a class="btn btn-primary btn-lg" href="/blog" role="button">See All Blog Posts</a>
+            </div>
+            
+            <div class='col-lg-8'>
+              {% for post in blogs %}
+                {% include "components/blog-card.html" %}
+              {% endfor %}  
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta" style="background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('{% static 'images/contact-us.jpg' %}') center right;background-size: cover;">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Contact Us to Learn How We Can Help</h3>
+            <p>We're available for free initial consultations. When we reach out, we will verify your needs and start to piece together a potential project plan and contract. Once we've got the contract and project plan approved, let's get to work!</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
 <div class='color-2'>
   <div class='container'>
     <div class='row'>
