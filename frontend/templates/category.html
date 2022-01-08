@@ -5,7 +5,7 @@
 
 {% block content %}
 <head><title>{{ tag.title }} | Tony Vergara</title></head>
-<section id="hero" style="background-image: url('{% static 'images/home-bg.png' %}');">
+<section id="hero" style="background-image: url('{% static 'images/img-hero-bg.png' %}');">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
@@ -24,7 +24,7 @@
 <section><div class='container mt-4'>
   <div class='row col-md-6'>
     <h2>Our {{tag.title}} Services</h2>
-    <p>Lorem ipsum dolor sit amet. This is where we'll talk the longer form content of the process we're offering. e.g: for workshops, talk about our planning and retrospective sessions. For website redesign strategy, talk about our pre-wireframe steps.</p>
+    <p>{{tag.body_copy|markdownify}}</p>
   </div>
   <div class='row col-md-6'>
     <div class="accordion" id="accordionExample" style="width:100%">

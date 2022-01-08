@@ -24,7 +24,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--secondary-font), sans-serif;
 }
 h2 {
   color: var(--turquoise-90);
@@ -99,6 +99,8 @@ h2 {
   --spacing-4: 32px;
   --spacing-5: 48px;
   --spacing-6: 64px;
+
+  -gradient-angle: 135deg;
 }
 /*--------------------------------------------------------------
 # Buttons
@@ -481,7 +483,7 @@ h2 {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right top;
-  margin-top: 70px;
+  margin-top: 75px;
   padding: 60px 0;
   background-color: var(--color-3);
 }
@@ -501,7 +503,7 @@ h2 {
 }
 
 #hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--primary-font), sans-serif;
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
@@ -541,7 +543,9 @@ h2 {
     font-size: 20px;
   }
 }
-
+.hero-short {
+  padding: var(--spacing-3) 0!important;
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -977,7 +981,7 @@ section {
 }
 
 .cta .cta-btn {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--primary-font), sans-serif;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 1px;
@@ -1299,7 +1303,7 @@ section {
   border-radius: 4px;
   color: #fff;
   font-size: 13px;
-  font-family: "Raleway", sans-serif;
+  font-family: var(--primary-font), sans-serif;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -1628,7 +1632,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: var(--primary-font), sans-serif;
   color: #576971;
 }
 
@@ -1759,7 +1763,22 @@ section {
   color: #364146;
 }
 
+.card{
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 0px 0px 18px 0px;
+  cursor: pointer;
+}
 
+.card:hover{
+  transform: scale(1.05);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  background:var(--color-2);
+  color: #232323;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
 
 
 .blog-card > .row {
