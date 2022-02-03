@@ -155,6 +155,14 @@ h2 {
   outline: none;
 }
 
+.btn-utility {
+  border-radius: 0;
+}
+.btn-utility:hover {
+  background-color: var(--purple-100);
+  color: white;
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -526,6 +534,16 @@ h2 {
 
 #hero .hero-img img {
   width: 100%;
+}
+
+.hero-cta .btn-primary:hover {
+    box-shadow: 0 0 var(--color-2);
+    transition: .500s;
+}
+
+.hero-cta .btn-primary {
+    box-shadow: -4px 4px var(--color-2);
+    transition: .500s;
 }
 
 @media (min-width: 1024px) {

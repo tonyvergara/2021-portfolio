@@ -14,7 +14,7 @@ def home(request):
         'blogs': client.entries(
             {'content_type': 'blogPost', 'include': 3, 'limit': 4}
         ),'projects': client.entries(
-            {'content_type': 'project', 'include': 3, 'limit': 4}
+            {'content_type': 'project', 'include': 3, 'limit': 3}
         ),'categories': client.entries(
             {'content_type': 'category', 'include': 3}
         ),'global_files': global_files,
