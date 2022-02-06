@@ -5,20 +5,20 @@ from .forms import Search_Form
 
 # Create your views here.
 global_files = client.entry('56c3sgivTfyHrEnbi9vBmJ')
-homepage_hero = client.asset('2Rlq0E36tgtmPnrE6DCxjT')
-
+homepage_hero = client.asset('4K6CVjiQHew1PeaUFo7CX7')
+hero_bg = client.asset('37IrIOhOtbFIknd5ambjgU')
+contact_bg = client.asset('39eq6gY9Od1C3csijgjRcF')
 
 
 def home(request):
     return render(request, 'index.html', {
-        'blogs': client.entries(
-            {'content_type': 'blogPost', 'include': 3, 'limit': 4}
-        ),'projects': client.entries(
-            {'content_type': 'project', 'include': 3, 'limit': 3}
-        ),'categories': client.entries(
-            {'content_type': 'category', 'include': 3}
-        ),'global_files': global_files,
+        'blogs': client.entries({'content_type': 'blogPost', 'include': 3, 'limit': 4}),
+        'projects': client.entries({'content_type': 'project', 'include': 3, 'limit': 3}),
+        'categories': client.entries({'content_type': 'category', 'include': 3}),
+        'global_files': global_files,
         'hero_image' : homepage_hero,
+        'hero_bg' : hero_bg,
+        'contact_bg' : contact_bg,
     })
 
 def about(request):

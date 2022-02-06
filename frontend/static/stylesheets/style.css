@@ -163,6 +163,26 @@ h2 {
   color: white;
 }
 
+.contain-left {
+  margin-right: 0;
+}
+.contain-right {
+  margin-left: 0;
+}
+.container-split {
+  width: 585px;
+}
+
+@media screen and (max-width:1140px) {
+    section#split-callout {display:inline!important}
+    .contain-left, .contain-right {
+        margin:inherit;
+    }
+    .container-split {
+      width: initial;
+    }
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

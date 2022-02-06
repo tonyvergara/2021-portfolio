@@ -4,7 +4,7 @@
 {% block content %}
 
 <head><title>Tony Vergara | UX Researcher & Strategist</title></head>
-  <section id="hero" style="background-image: url('{% static 'images/img-hero-bg.png' %}');">
+  <section id="hero" style="background-image: url('{{hero_bg.url}}');">
 
     <div class="container">
       <div class="row">
@@ -36,7 +36,7 @@
 
         <div class="row">
           {% for category in categories %}
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+          <div class="col-xs-6 col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
             <div class="icon-box icon-box-{{ forloop.counter }} mb-4">
               <div class="icon">
                 <img class='icon category-icon' src="{{category.icon.url}}">
@@ -101,7 +101,7 @@
       </div>
     </section>
     <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta" style="background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('{% static 'images/contact-us.jpg' %}') center right;background-size: cover;">
+    <section id="cta" class="cta" style="background: linear-gradient(rgba(190, 254, 231, 0.8), rgba(190, 254, 231, 0.8)), url('{{contact_bg.url}}') center right;background-size: cover;">
       <div class="container">
 
         <div class="row" data-aos="zoom-in">
