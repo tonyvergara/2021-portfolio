@@ -6,11 +6,11 @@
 
 
 <title>{{ project.project_title }} | Tony Vergara</title>
-<section id="hero" style="background-image: url('{% static 'images/img-hero-bg.png' %}');">
+<section id="hero" class="services" style="">
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-6 pt-5 pt-lg-0 order-1 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-1 order-lg-1 d-flex flex-column justify-content-center">
           <div>
             <h1>{{ project.project_title }}</h1>
             <h2>{{project.description}}</h2>
@@ -22,32 +22,21 @@
       </div>
 
     </div>
-
-  </section><!-- End Hero -->
-
-<!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container">
-
-        <!--<div class="section-title" data-aos="fade-up">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>-->
-
+    <div class="container-fluid mt-4">
         <div class="row">
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
             <div class="icon-box icon-box-{{ forloop.counter }} mb-4">
               <h6>PROJECT DURATION</h6>
               <h4 class="title">{{ project.duration }}</a></h4>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
             <div class="icon-box icon-box-{{ forloop.counter }} mb-4">
               <h6>MY ROLE</h6>
               <h4 class="title">{{ project.role }}</h4>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
             <div class="icon-box icon-box-{{ forloop.counter }} mb-4">
               <h6>RELEVANT BUZZWORDS</h6>
               <h4 class="title">{{ project.technology }}</h4>
@@ -56,10 +45,11 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+  </section><!-- End Hero -->
+
 
 <section id="split-callout" class="d-flex py-0">
-  <div class="w-100 py-4" style="background-color: var(--pink-10);"><div class="container container-split contain-left">Vivamus tincidunt finibus eros non accumsan. Sed vitae ultrices nisi. Donec quis faucibus quam. Nullam bibendum rutrum nulla.
+  <div class="w-100 py-4" style="background-color: var(--pink-10);"><div class="container container-split contain-left">{{ project.lessons|markdownify|safe }}
 
 </div></div>
   <div class="w-100 py-4" style="background-color: var(--green-10);"><div class="container container-split contain-right">Mauris dapibus convallis neque, nec ullamcorper mi efficitur pulvinar. Nam in laoreet eros. Morbi faucibus est id cursus.
@@ -79,78 +69,10 @@
       </div>
   </div>
 </section><!-- End Project Summary Section -->
-<section>
-<article>
-  <div class='container'>
-    {% if not project.section1_image %}
-    <div class='row project-section'>
-      <div class='col-lg-8'>
-        <h2>{{ project.section1_title }}</h2>
-        <p>{{ project.s1_body|markdownify|safe  }}</p>
-      </div>
-    </div>
-    {% else %}
-    <div class='row project-section'>
-      <div class='col-lg-6'>
-        <h2>{{ project.section1_title }}</h2>
-        <p>{{ project.s1_body|markdownify}}</p>
-      </div>
-      <figure class="col-lg-6 figure my-2"><img style="width:100%;" src="{{ project.section1_image.url }}"><figcaption class="figure-caption">{{ project.section1_image.description }}</figcaption></figure>
-    </div>
-    {% endif %}
-    <hr>
-    {% if not project.section2_image %}
-    <div class='row project-section'>
-      <div class='col-lg-8'>
-        <h2>{{ project.section2_title }}</h2>
-        <p>{{ project.s2_body|markdownify}}</p>
-      </div>
-    </div>
-    {% else %}
-    <div class='row project-section'>
-      <div class='col-lg-6'>
-        <h2>{{ project.section2_title }}</h2>
-        <p>{{ project.s2_body|markdownify}}</p>
-      </div>
-      <figure class="col-lg-6 figure my-2"><img style="width:100%;" src="{{ project.section2_image.url }}"><figcaption class="figure-caption">{{ project.section2_image.description }}</figcaption></figure>
-    </div>
-    {% endif %}
-    <hr>
-    {% if not project.section3_image %}
-    <div class='row project-section'>
-      <div class='col-lg-8'>
-        <h2>{{ project.section3_title }}</h2>
-        <p>{{ project.s3_body|markdownify|safe  }}</p>
-      </div>
-    </div>
-    {% else %}
-    <div class='row project-section'>
-      <div class='col-lg-6'>
-        <h2>{{ project.section3_title }}</h2>
-        <p>{{ project.s3_body|markdownify|safe  }}</p>
-      </div>
-      <figure class="col-lg-6 figure my-2"><img style="width:100%;" src="{{ project.section3_image.url }}"><figcaption class="figure-caption">{{ project.section3_image.description }}</figcaption></figure>
-    </div>
-    {% endif %}
-    <hr>
-    {% if not project.section4_image %}
-    <div class='row project-section'>
-      <div class='col-lg-8'>
-        <h2>{{ project.section4_title }}</h2>
-        <p>{{ project.s4_body|markdownify|safe }}</p>
-      </div>
-    </div>
-    {% else %}
-    <div class='row project-section'>
-      <div class='col-lg-6'>
-        <h2>{{ project.section4_title }}</h2>
-        <p>{{ project.s4_body|markdownify|safe }}</p>
-      </div>
-      <figure class="col-lg-6 figure my-2"><img style="width:100%;" src="{{ project.section4_image.url }}"><figcaption class="figure-caption">{{ project.section4_image.description }}</figcaption></figure>
-    </div>
-    {% endif %}
-  </div>
-  </section>
+  {% for section in project.sections %}
+  {% include "components/content-section.html" %}
+  {% endfor %}
+
   {% if project.deliverables %}
   <section id="blog" class="blog">
       <div>
@@ -266,7 +188,7 @@
     </div>
   </div>
   {% endif %}
-</article>
+
 <script>
 // Open the Modal
 function openModal() {

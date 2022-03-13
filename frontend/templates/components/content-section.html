@@ -1,0 +1,26 @@
+{% load markdownify %}
+<section class="container-fluid">
+  <!-- tasks before launch: figure out how to integrate the images -->
+  <!-- add in the different layouts; current state, image and no image. v1: add artifact link(s), v2: stack the images in case of a wide image—like a sitemap or show an image grid, v3: background color in case of an alert style callout!,  -->
+
+  {% if not section.images %}
+    <div class='row project-section'>
+      <div class='col-lg-8'>
+        <h6>{{ section.eyebrow }}</h6>
+        <h2>{{ section.heading }}</h2>
+        <p>{{ section.body|markdownify|safe }}</p>
+      </div>
+    </div>
+    {% else %}
+    <div class='row project-section'>
+      <div class='col-lg-6'>
+        <h6>{{ section.eyebrow }}</h6>
+        <h2>{{ section.heading }}</h2>
+        <p>{{ section.body|markdownify|safe }}</p>
+      </div>
+      {% for image in section.images %}
+    <figure class="col-lg-6 figure my-2"><img style="width:100%;" src="{{ image.url }}"><figcaption class="figure-caption">{{ image.description }}</figcaption></figure>{% endfor %}
+    </div>
+    {% endif %}
+</section>
+<hr>
