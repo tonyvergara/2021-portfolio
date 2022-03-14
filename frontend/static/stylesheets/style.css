@@ -504,6 +504,13 @@ h2 {
 .navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
+
+.navbar-mobile>li {
+    position: absolute;
+    top: 0;
+    right: 40px;
+}
+
 .nav-link .btn-primary, .nav-link .btn-primary:hover {
   color: #ffffff;
 }
