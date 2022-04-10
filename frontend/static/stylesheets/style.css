@@ -156,7 +156,7 @@ h4 {
   margin-right: 0;
   margin-left: 0;
   transition: .25s;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
@@ -541,7 +541,7 @@ h4 {
 #hero h1 {
   margin: 0 0 20px 0;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 56px;
   color: var(--color-3-light);
 }
@@ -783,7 +783,7 @@ section {
 }
 
 .services .title {
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 15px;
   font-size: 18px;
 }
@@ -990,7 +990,7 @@ section {
 
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
@@ -1012,7 +1012,7 @@ section {
 
 .portfolio-details .portfolio-description h2 {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
@@ -1030,7 +1030,7 @@ section {
 .cta h3 {
   color: #364146;
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .cta p {
@@ -1200,7 +1200,7 @@ section {
 }
 
 .team .member h4 {
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 10px;
   font-size: 16px;
   color: #364146;
@@ -1681,7 +1681,7 @@ section {
   margin: 0 0 20px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 #footer .footer-top .footer-info p {
