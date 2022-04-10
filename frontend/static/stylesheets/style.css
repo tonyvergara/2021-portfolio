@@ -718,12 +718,12 @@ section {
 .features .nav-link.active {
   border-radius: 0;
   border: 0;
-  border-left: 4px solid #009cea;
+  border-left: 4px solid var(--color-3);
   background: #fafbfb;
 }
 
 .features .nav-link.active h4 {
-  color: #009cea;
+  color: var(--color-3);
 }
 
 .features .tab-pane.active {
@@ -855,7 +855,7 @@ section {
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #009cea;
+  color: var(--color-3);
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -918,7 +918,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a {
-  color: #009cea;
+  color: var(--color-3);
   margin: 0 2px;
   font-size: 24px;
   display: inline-block;
@@ -931,7 +931,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
   color: #fff;
-  background: #009cea;
+  background: var(--color-3);
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -973,11 +973,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #009cea;
+  border: 1px solid var(--color-3);
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #009cea;
+  background-color: var(--color-3);
 }
 
 .portfolio-details .portfolio-info {
@@ -1135,11 +1135,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #009cea;
+  border: 1px solid var(--color-3);
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #009cea;
+  background-color: var(--color-3);
 }
 
 /*--------------------------------------------------------------
@@ -1232,7 +1232,7 @@ section {
 }
 
 .team .member .social a:hover {
-  color: #009cea;
+  color: var(--color-3);
 }
 
 .team .member .social i {
@@ -1303,7 +1303,7 @@ section {
 
 .pricing h4 {
   font-size: 36px;
-  color: #009cea;
+  color: var(--color-3);
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -1334,7 +1334,7 @@ section {
 }
 
 .pricing ul i {
-  color: #009cea;
+  color: var(--color-3);
   font-size: 18px;
   padding-right: 4px;
 }
@@ -1350,7 +1350,7 @@ section {
 }
 
 .pricing .btn-buy {
-  background: #009cea;
+  background: var(--color-3);
   display: inline-block;
   padding: 8px 30px;
   border-radius: 4px;
@@ -1362,8 +1362,8 @@ section {
 }
 
 .pricing .featured {
-  background: #009cea;
-  border-color: #009cea;
+  background: var(--color-3);
+  border-color: var(--color-3);
 }
 
 .pricing .featured h3, .pricing .featured h4, .pricing .featured h4 span, .pricing .featured ul, .pricing .featured ul .na {
@@ -1372,7 +1372,7 @@ section {
 
 .pricing .featured .btn-buy {
   background: #fff;
-  color: #009cea;
+  color: var(--color-3);
 }
 
 .pricing .advanced {
@@ -1384,7 +1384,7 @@ section {
   z-index: 1;
   font-size: 14px;
   padding: 1px 0 3px 0;
-  background: #009cea;
+  background: var(--color-3);
   color: #fff;
 }
 
@@ -1409,7 +1409,7 @@ section {
 .faq .faq-list .question {
   display: block;
   position: relative;
-  font-family: #009cea;
+  font-family: var(--color-3);
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -1440,7 +1440,7 @@ section {
 }
 
 .faq .faq-list .collapsed:hover {
-  color: #009cea;
+  color: var(--color-3);
 }
 
 .faq .faq-list .collapsed .icon-show {
@@ -1466,7 +1466,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #009cea;
+  color: var(--color-3);
   float: left;
   width: 44px;
   height: 44px;
@@ -1513,12 +1513,12 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #009cea;
+  background: var(--color-3);
   color: #fff;
 }
 
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #009cea;
+  background: var(--color-3);
   color: #fff;
 }
 
@@ -1591,7 +1591,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #009cea;
+  background: var(--color-3);
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1718,7 +1718,7 @@ section {
 
 
 #footer .footer-top .social-links a:hover {
-  background: #009cea;
+  background: var(--color-3);
   color: #fff;
   text-decoration: none;
 }
@@ -1743,7 +1743,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: var(--spacing-1);
-  color: #009cea;
+  color: var(--color-3);
   font-size: 18px;
   line-height: 1;
   margin-left: -5px;
@@ -1767,7 +1767,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #009cea;
+  color: var(--color-3);
 }
 
 #footer .footer-top .footer-newsletter form {
@@ -1794,7 +1794,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #009cea;
+  background: var(--color-3);
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
