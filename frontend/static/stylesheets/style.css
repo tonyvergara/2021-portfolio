@@ -14,12 +14,12 @@ body {
 }
 
 a {
-  color: var(--color-2);
+  color: var(--color-3);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--purple-60);
+  color: var(--turquoise-60);
   text-decoration: none;
 }
 
