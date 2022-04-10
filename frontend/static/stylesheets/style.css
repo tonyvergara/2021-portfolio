@@ -1854,3 +1854,6 @@ section {
   width: 100%;
   text-align: left;
 }
+
+.contact-card {padding: 8px 0;border-bottom: 1px solid var(--color-2);}
+.contact-card:last-child {border-bottom:none;})
