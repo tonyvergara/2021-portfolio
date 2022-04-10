@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  color: var(--purple-80);
+  color: var(--color-2);
   text-decoration: none;
 }
 
@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5 {
   font-family: var(--secondary-font), sans-serif;
 }
 h2 {
-  color: var(--turquoise-90);
+  color: var(--color-3);
 }
 
 :root {
@@ -83,14 +83,14 @@ h2 {
   --pink-90: #6b020b;
   --pink-100: #330004;
 
-  --color-1: var(--green-20);
+  --color-1: var(--green-80);
   --color-1-light: var(--green-10);
-  --color-2: var(--purple-20);
+  --color-2: var(--purple-80);
   --color-2-light: var(--purple-10);
-  --color-3: var(--turquoise-20);
+  --color-3: var(--turquoise-80);
   --color-3-light: var(--turquoise-10);
-  --color-4: var(--pink-20);
-  --color-4-light: var(--pink-60);
+  --color-4: var(--pink-80);
+  --color-4-light: var(--pink-10);
   --color-dark: var(--text-light);
   --color-light: var(--text-dark);
   --spacing-1: 4px;
@@ -111,18 +111,18 @@ h2 {
 # Buttons
 --------------------------------------------------------------*/
 .btn-primary {
-  background-color: var(--purple-90);
-  border-color: var(--purple-90);
+  background-color: var(--color-2);
+  border-color: var(--color-2);
   color: #ffffff;
 }
 .btn-primary:hover {
-  background-color: var(--purple-70);
-  border-color: var(--purple-70);
-  color: #ffffff;
+  background-color: var(--color-2-light);
+  border-color: var(--color-2-light);
+  color: var(--color-dark);
 }
 
 .btn-link {
-  color: var(--purple-90);
+  color: var(--color-2);
 }
 
 .btn-link .btn-copy::after {
@@ -145,7 +145,7 @@ h2 {
   transform-origin: bottom left;
 }
 .btn-link:focus, .btn-link:hover {
-  color: var(--purple-80));
+  color: var(--color-2);
   text-decoration: none;
 }
 
@@ -164,7 +164,7 @@ h2 {
   border-radius: 0;
 }
 .btn-utility:hover {
-  background-color: var(--purple-100);
+  background-color: var(--color-2);
   color: white;
 }
 
@@ -293,7 +293,7 @@ h2 {
 }
 
 .header-social-links a:hover {
-  color: var(--turquoise-20);
+  color: var(--color-2-light));
 }
 
 /*--------------------------------------------------------------
@@ -326,7 +326,7 @@ h2 {
   padding: var(--spacing-2) var(--spacing-3);
   font-size: 16px;
   font-family: "Yantramanav", sans-serif;
-  color: var(--purple-100);
+  color: var(--color-2);
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -338,7 +338,7 @@ h2 {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: var(--purple-60);
+  color: var(--color-2-light);
 }
 
 .navbar .dropdown ul {
@@ -363,7 +363,7 @@ h2 {
 .navbar .dropdown ul a {
   padding: 10px 20px;
   font-size: 14px;
-  color: #003651;
+  color: var(--color-2);
 }
 
 .navbar .dropdown ul a i {
@@ -371,7 +371,7 @@ h2 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #009cea;
+  color: var(--color-1);
 }
 
 .navbar .dropdown:hover > ul {
@@ -407,7 +407,7 @@ h2 {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: var(--purple-100);
+  color: var(--color-2);
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -416,7 +416,7 @@ h2 {
 }
 
 .mobile-nav-toggle.bi-x {
-  color: var(--purple-100);
+  color: var(--color-2);
 }
 
 @media (max-width: 991px) {
@@ -462,11 +462,11 @@ h2 {
 .navbar-mobile a {
   padding: 10px 20px;
   font-size: 15px;
-  color: var(--purple-90);
+  color: var(--color-2);
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: var(--purple-70);
+  color: var(--color-2-light);
 }
 
 .navbar-mobile .getstarted {
@@ -498,7 +498,7 @@ h2 {
 }
 
 .navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-  color: var(--purple-70);
+  color: var(--color-2-light);
 }
 
 .navbar-mobile .dropdown > .dropdown-active {
@@ -516,7 +516,7 @@ h2 {
 }
 
 .utility-nav {
-  background-color: var(--color-2-light);
+  background-color: var(--color-2);
 }
 .utility-nav .container {
   justify-content: end;
@@ -540,11 +540,11 @@ h2 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: #364146;
+  color: var(--color-3-light);
 }
 
 #hero h2 {
-  color: var(--turquoise-90);
+  color: var(--color-3-light);
   margin-bottom: 30px;
   font-size: 24px;
 }
@@ -560,11 +560,11 @@ h2 {
   border-radius: 3px;
   transition: 0.5s;
   color: #fff;
-  background: #009cea;
+  background: var(--color-3-light);
 }
 
 #hero .btn-get-started:hover {
-  background: #008bd1;
+  background: var(--color-2-light);
 }
 
 #hero .hero-img {
@@ -652,7 +652,7 @@ section {
 .about .content h3 {
   font-weight: 400;
   font-size: 32px;
-  color: #364146;
+  color: var(--color-2);
 }
 
 .about .content ul {
