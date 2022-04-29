@@ -374,7 +374,7 @@ h4 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: var(--color-1);
+  color: var(--color-3);
 }
 
 .navbar .dropdown:hover > ul {
@@ -1859,4 +1859,7 @@ section {
 }
 
 .contact-card {padding: 8px 0;border-bottom: 1px solid var(--color-2);}
-.contact-card:last-child {border-bottom:none;})
+.contact-card:last-child {border-bottom:none;}
+
+.background-2 {background-color: var(--color-2);}
+.background-3 {background-color: var(--color-3);}
